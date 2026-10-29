@@ -1,0 +1,92 @@
+# Single source for the CV page (/cv/) and the Experience section on the home page.
+# Facts must match the LaTeX CV in ../main.tex (see ../AGENTS.md); don't add anything that isn't there.
+# `dates` is the human-readable range shown on the home page; the CV page derives years from start_date/end_date.
+cv:
+  name: Yang-Che (Jeff) Tseng
+  label: ML / Infrastructure Engineer
+  email: jeff999955@gmail.com
+  location: Taipei, Taiwan
+
+  sections:
+    Experience:
+      - company: University of British Columbia
+        position: M.Sc. Thesis Research, 3D Computer Vision
+        location: Vancouver, Canada
+        start_date: 2024-09
+        end_date: 2026-11
+        dates: Sep 2024 – Nov 2026
+        highlights:
+          - "**GPU fleet at scale:** ran **110k+ Slurm jobs (≈15.8k GPU-hours)** on 3 clusters (A5000/3090, V100, H100 MIG slices), peaking at **127 concurrent GPUs**; templated per-scene jobs and packaged baselines as **Apptainer** images."
+          - "**Agentic HPC ops:** built a **Claude Code** setup (48 skills, 6 subagents, safety hooks, post-mortem rules) that submits, monitors and fixes Slurm jobs over SSH; parallel autonomous sessions in git worktrees opened **281 PRs (227 merged)**."
+          - "**Evaluation harness:** designed a new single-image novel view synthesis protocol (feature matching → PnP → co-visibility mask) that fixes misaligned benchmarks (**WACV 2027**, first author); one shared scorer for **11 baselines** on 4 datasets and 1.7k test views."
+          - "**Throughput:** cut CogNVS evaluation from ~3.5 h to ~21 min per scene by batching across V100s."
+          - "**Methods:** MapAnything-GS (MapAnything SfM initialization → 3D Gaussian Splatting)."
+
+      - company: University of British Columbia, Computer Vision Lab
+        position: Research Assistant
+        location: Vancouver, Canada
+        start_date: 2023
+        end_date: 2024
+        dates: 2023 – 2024
+        highlights:
+          - "Dynamic-scene 3D Gaussian Splatting (optical-flow static/dynamic split, video-diffusion refiner)."
+          - "Experiments for PointNeRF++ (ECCV 2024)."
+
+      - company: GoGoX
+        position: Software Engineer, Data Scientist
+        location: Taipei, Taiwan (remote from Vancouver)
+        start_date: 2022-09
+        end_date: 2024-06
+        dates: Sep 2022 – Jun 2024
+        summary: Data Scientist Intern Sep 2022 – Jun 2023, then Software Engineer / Data Scientist Jun 2023 – Jun 2024.
+        highlights:
+          - "**LLM QA bot:** built a RAG chatbot (**OpenAI, LangChain, Pinecone**) on **GCP**; cut latency by 2 s with **Redis Stack**."
+          - "**Driver stopping model:** extracted the **GraphHopper** routing engine from a deprecated Java dispatch system into a **Docker Compose** service with a Python interface; ran counterfactual analysis on driver stop probability."
+          - "**Labeling automation:** ML model on GPS and order data that auto-labels pickup times, with **autoencoder** anomaly filtering."
+          - "**GPS map matching:** **HMM** matching to OpenStreetMap (Python, shapely) to build a travel-time database for ETA."
+
+      - company: ASUS Intelligent Cloud Services (AICS)
+        position: Software Engineering Intern
+        location: Taipei, Taiwan
+        start_date: 2022-07
+        end_date: 2022-09
+        dates: Jul 2022 – Sep 2022
+        highlights:
+          - "Extended Selenium IDE with **Electron / Node.js**, making 19 of 23 previously unrecordable test cases automatable."
+
+    Education:
+      - institution: University of British Columbia
+        location: Vancouver, Canada
+        area: Computer Science
+        studyType: M.Sc.
+        start_date: 2024-09
+        end_date: 2026-11
+        highlights:
+          - "Average 92.8%. Advisor: Kwang Moo Yi."
+          - "Thesis: *Aligning Misaligned Benchmarks for Single-View Novel View Synthesis*."
+
+      - institution: National Taiwan University
+        location: Taipei, Taiwan
+        area: Computer Science and Information Engineering
+        studyType: B.Sc.
+        start_date: 2019
+        end_date: 2023
+        highlights:
+          - "GPA 3.92/4.0."
+          - "TA for Deep Learning for Computer Vision (2022) and Data Structures & Algorithms (2021); lead of the wired network team, NTU CSIE NASA (2022–23)."
+
+    Skills:
+      - name: Languages
+        keywords: "Python, C/C++, CUDA, JavaScript/TypeScript (Node.js), Dart"
+      - name: ML & Vision
+        keywords: "PyTorch, 3D reconstruction (SfM, Gaussian Splatting, NeRF, SLAM), LLM apps (RAG, agents)"
+      - name: Infrastructure
+        keywords: "Slurm, Apptainer, HPC, AWS (Lambda, SES, S3), Google Cloud, Cloudflare Workers, GitHub Actions"
+      - name: Open source
+        keywords: "Added per-user filtering to nvtop, a GPU monitoring tool (C)"
+
+    Languages:
+      - name: Mandarin
+        summary: Native
+      - name: English
+        summary: Fluent
