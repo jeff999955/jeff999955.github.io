@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jeff Tseng</title>
-<meta name="description" content="Jeff (Yang-Che) Tseng, ML engineer: ML infrastructure and HPC, LLM applications, data pipelines and 3D computer vision.">
+<meta name="description" content="Jeff (Yang-Che) Tseng, ML infrastructure engineer: LLM infrastructure and agents, GPU clusters, data pipelines, and AI systems shipped into real workflows.">
 <meta property="og:title" content="Jeff Tseng">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,9 +39,9 @@
 
 <header class="hero" id="top">
   <div class="hero-inner">
-    <p class="venue intro" style="--d:0">ML engineer</p>
+    <p class="venue intro" style="--d:0">ML infrastructure engineer</p>
     <h1 class="intro" style="--d:1">Jeff Tseng <span class="alt">(Yang-Che)</span></h1>
-    <p class="lede intro" style="--d:2">I build the systems around machine learning models: LLM apps and data pipelines that run in production, and the GPU infrastructure behind 110k+ Slurm jobs for my M.Sc. in computer science at UBC.</p>
+    <p class="lede intro" style="--d:2">I build the infrastructure that puts models to work: LLM apps and agents, data pipelines that run in production, and the GPU fleet behind 110k+ Slurm jobs for my M.Sc. in computer science at UBC.</p>
     <ul class="buttons intro" style="--d:3">
       <li><a class="btn" href="https://github.com/jeff999955"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5 M16 7l5 5-5 5 M13.5 5l-3 14"/></svg><span>GitHub</span></a></li>
       <li><a class="btn" href="https://www.linkedin.com/in/yang-che-tseng-6a9502224"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2.2"/><path d="M5.8 16c.6-1.8 1.8-2.7 3.2-2.7s2.6.9 3.2 2.7 M14.5 9.5h4 M14.5 13h4"/></svg><span>LinkedIn</span></a></li>
@@ -56,11 +56,11 @@
     <h2 class="reveal">About</h2>
     <div class="about reveal-group">
       <div class="prose">
-        <p>I am an ML engineer who works on AI systems end to end: data pipelines, training and evaluation runs at scale, and the services around them. At GoGoX I built an LLM retrieval assistant and geospatial models for a delivery platform; at MyProGuide I built a serverless AWS pipeline that has run in production for over a year at up to 35k emails a month.</p>
-        <p>For my M.Sc. at UBC I ran 110k+ Slurm jobs (about 15.8k GPU-hours) across three clusters, and built a Claude Code setup that submits, monitors and fixes those jobs. The model is often only part of the job; the rest is getting data in, results out, and the whole thing running reliably on real hardware.</p>
+        <p>I take AI systems from a rough idea to something a team relies on: connecting them to the systems and data that already exist, working with the people who use them, and keeping them running. At GoGoX I built an LLM retrieval assistant and put it in front of beta users, and turned a routing engine buried in a legacy Java system into a service. At MyProGuide I built a serverless AWS pipeline that reads cancellation emails from 12 travel agencies and updates orders; it has run in production for over a year at up to 35k emails a month, and I worked with the operations team to recover 3,200 of 3,600 historical emails.</p>
+        <p>On the LLM side I build retrieval (OpenAI, LangChain, Pinecone, Redis Stack), text-to-SQL agents and agentic tooling. For my M.Sc. at UBC I built a Claude Code setup with safety hooks that submits, monitors and fixes Slurm jobs across three clusters: 110k+ jobs and about 15.8k GPU-hours in all.</p>
       </div>
       <dl class="facts">
-        <div><dt>Focus</dt><dd><ul class="tags"><li>LLM apps &amp; agents</li><li>ML infrastructure &amp; HPC</li><li>Data pipelines</li><li>Computer vision</li><li>GPU computing</li></ul></dd></div>
+        <div><dt>Focus</dt><dd><ul class="tags"><li>LLM infrastructure &amp; agents</li><li>ML infrastructure &amp; HPC</li><li>Prototype to production</li><li>Systems integration</li><li>Data pipelines</li><li>3D computer vision</li></ul></dd></div>
         <div><dt>Tools</dt><dd><ul class="tags"><li>Python</li><li>C/C++</li><li>CUDA</li><li>TypeScript · Node.js</li><li>PyTorch</li><li>Slurm · Apptainer</li><li>AWS</li><li>Google Cloud</li><li>Cloudflare Workers</li><li>GitHub Actions</li></ul></dd></div>
         <div><dt>Education</dt><dd><p><b>M.Sc., Computer Science</b> · The University of British Columbia · 2024–2026</p><p><b>B.Sc., Computer Science and Information Engineering</b> · National Taiwan University · 2019–2023</p></dd></div>
       </dl>
@@ -74,7 +74,7 @@
     <h3 class="sub reveal">Industry</h3>
     <ol class="timeline reveal-group">
       <li><span class="when">2024–2025</span><div><p class="role">Software Engineer (part-time) · MyProGuide (TravoAI)</p><p class="where">Remote</p><ul><li><b>Serverless email pipeline:</b> built an AWS SES → Lambda → S3 pipeline that parses cancellation emails from 12 online travel agencies (Klook, KKday, Viator and others) and updates orders through the API. In production for over a year at up to 35k emails a month.</li><li>Wrote multilingual per-agency parsers with a Jest suite built on real emails; recovered 3,200 of 3,600 historical emails with the operations team.</li><li><b>Flutter app:</b> built a tour-guide app from scratch to MVP through spec-first issues and reviewed PRs (BLoC, OAuth, CI).</li><li><b>LLM tooling:</b> prototyped a text-to-SQL agent (LangChain, Gemini) that creates PostgreSQL test accounts.</li></ul></div></li>
-      <li><span class="when">2022–2024</span><div><p class="role">Software Engineer, Data Scientist · GoGoX</p><p class="where">Data Scientist Intern from Sep 2022, full-time from Jun 2023 · Taipei, remote from Vancouver</p><ul><li><b>LLM QA bot:</b> built a RAG chatbot on OpenAI, LangChain and Pinecone, deployed on Google Cloud; a self-hosted Redis Stack vector store cut 2 s of latency.</li><li><b>Routing service:</b> extracted the GraphHopper routing engine from a deprecated Java dispatch system into a Docker Compose service with a Python interface, used for counterfactual analysis of driver stop probability.</li><li><b>Labeling automation:</b> an ML model on GPS and order data that labels pickup times automatically, with autoencoder anomaly filtering.</li><li><b>GPS map matching:</b> HMM matching to OpenStreetMap (Python, shapely) to build a travel-time database for ETAs.</li></ul></div></li>
+      <li><span class="when">2022–2024</span><div><p class="role">Software Engineer, Data Scientist · GoGoX</p><p class="where">Data Scientist Intern from Sep 2022, full-time from Jun 2023 · Taipei, remote from Vancouver</p><ul><li><b>LLM QA bot:</b> built a RAG chatbot on OpenAI, LangChain and Pinecone, deployed on Google Cloud with a Streamlit MVP for beta users; a self-hosted Redis Stack vector store cut 2 s of latency.</li><li><b>Routing service:</b> extracted the GraphHopper routing engine from a deprecated Java dispatch system into a Docker Compose service with a Python interface, used for counterfactual analysis of driver stop probability.</li><li><b>Labeling automation:</b> an ML model on GPS and order data that labels pickup times automatically, with autoencoder anomaly filtering.</li><li><b>GPS map matching:</b> HMM matching to OpenStreetMap (Python, shapely) to build a travel-time database for ETAs.</li></ul></div></li>
       <li><span class="when">2022</span><div><p class="role">Software Engineering Intern · ASUS Intelligent Cloud Services</p><p class="where">Taipei</p><ul><li>Extended Selenium IDE with Electron and Node.js, making 19 of 23 previously unrecordable test cases automatable.</li></ul></div></li>
     </ol>
     <h3 class="sub reveal">Research engineering</h3>
@@ -143,7 +143,7 @@
 <section id="contact" class="section">
   <div class="inner contact reveal">
     <h2>Contact</h2>
-    <p class="lede">Email is the best way to reach me. I am looking for ML engineering roles, especially in ML infrastructure and LLM applications.</p>
+    <p class="lede">Email is the best way to reach me. I am looking for ML infrastructure, LLM infrastructure and forward deployed engineering roles.</p>
     <p class="contact-mail"><a href="mailto:jeff@yangchetseng.com">jeff@yangchetseng.com</a></p>
     <ul class="buttons">
       <li><a class="btn" href="mailto:jeff@yangchetseng.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span>Email</span></a></li>
