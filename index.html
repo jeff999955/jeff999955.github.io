@@ -17,13 +17,12 @@
   <div class="localnav-inner">
     <a class="localnav-title" href="#top">Jeff Tseng</a>
     <ul id="nav-sections">
+      <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#publications">Publications</a></li>
       <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <a class="localnav-cta" href="Jeff_CV.pdf">CV</a>
+    <a class="localnav-cta" href="Jeff_CV.pdf">Resume</a>
     <div class="theme-slot">
       <div class="theme-switch" role="radiogroup" aria-label="Color theme" data-theme-switch>
         <div class="theme-track">
@@ -39,29 +38,21 @@
 </nav>
 
 <header class="hero" id="top">
-  <div class="hero-inner" data-hero>
+  <div class="hero-inner">
     <p class="venue intro" style="--d:0">Computer vision · UBC</p>
     <h1 class="intro" style="--d:1">Jeff Tseng <span class="alt">(Yang-Che)</span></h1>
-    <p class="lede intro" style="--d:2">M.Sc. student in computer science at the University of British Columbia. I work on neural rendering and 3D reconstruction: Gaussian Splatting, NeRF, SLAM, and how we evaluate novel view synthesis.</p>
-    <p class="affils intro" style="--d:3"><span>Vancouver, BC</span><span><a href="mailto:jeffyct@cs.ubc.ca">jeffyct@cs.ubc.ca</a></span></p>
-    <ul class="buttons intro" style="--d:4">
-      <li><a class="btn" href="Jeff_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg><span>CV</span></a></li>
+    <p class="lede intro" style="--d:2">M.Sc. student in computer science at the University of British Columbia. I build and evaluate methods that turn images into 3D scenes: Gaussian Splatting, NeRF, SLAM, and benchmarks for novel view synthesis.</p>
+    <ul class="buttons intro" style="--d:3">
       <li><a class="btn" href="https://github.com/jeff999955"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5 M16 7l5 5-5 5 M13.5 5l-3 14"/></svg><span>GitHub</span></a></li>
-      <li><a class="btn" href="mailto:jeffyct@cs.ubc.ca"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span>Email</span></a></li>
+      <li><a class="btn" href="Jeff_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg><span>Resume</span></a></li>
+      <li><a class="btn" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span>Contact</span></a></li>
     </ul>
   </div>
-  <a class="scroll-cue intro" style="--d:6" href="#about" aria-label="Scroll to About"><span></span></a>
 </header>
 
-<section id="about" class="section tint">
-  <div class="inner page">
-    <p class="tldr" data-words><b>ABOUT</b><span class="s">I build and evaluate methods that turn images into 3D scenes you can render from new viewpoints.</span><span class="s">Lately: diffusion models with Gaussian Splatting, and benchmarks that compare the views they claim to.</span></p>
-  </div>
-</section>
-
-<section id="publications" class="section">
+<section id="work" class="section">
   <div class="inner">
-    <h2 class="reveal">Publications</h2>
+    <h2 class="reveal">Featured work</h2>
 
     <article class="featured reveal">
       <div class="featured-media">
@@ -74,86 +65,106 @@
         <div class="chips" aria-hidden="true"><span class="chip conv">TTO only</span><span class="chip ours">PnP + TTO</span></div>
       </div>
       <div class="featured-body">
-        <p class="pub-venue">WACV 2027</p>
+        <p class="pub-venue">WACV 2027 · First author</p>
         <h3 class="pub-title">Aligning Misaligned Benchmarks for Single-View Novel View Synthesis</h3>
         <p class="pub-authors"><b>Yang-Che Tseng</b>, Erqun Dong, Jeong-gi Kwak, Gopal Sharma, Shakiba Kheradmand, Stephan Garbin, Hossam Isack, Kwang Moo Yi</p>
         <p class="pub-blurb">Conventional protocols compare rendered views that do not match the ground truth. We align each reconstruction to the ground-truth frame with image matching and PnP, then evaluate only co-visible pixels. Drag to compare error maps of the same Flash3D render.</p>
+        <ul class="tags"><li>Novel view synthesis</li><li>PnP-RANSAC</li><li>Benchmarking</li></ul>
         <ul class="pub-links"><li><a class="pill" href="https://arxiv.org/pdf/2610.38349">Paper</a></li><li><a class="pill" href="https://github.com/ubc-vision/aligned-sv-nvs-bench">Code</a></li></ul>
       </div>
     </article>
 
-    <ol class="pubs reveal-group">
-      <li>
-        <p class="pub-venue">NeurIPS 2024</p>
-        <h3 class="pub-title">3D Gaussian Splatting as Markov Chain Monte Carlo</h3>
-        <p class="pub-authors">Shakiba Kheradmand, Daniel Rebain, Gopal Sharma, Weiwei Sun, <b>Jeff Tseng</b>, Hossam Isack, Abhishek Kar, Andrea Tagliasacchi, Kwang Moo Yi</p>
-        <ul class="pub-links"><li><a class="pill" href="https://ubc-vision.github.io/3dgs-mcmc/">Project page</a></li><li><a class="pill" href="https://arxiv.org/abs/2404.09591">arXiv</a></li></ul>
+    <ul class="work-grid reveal-group">
+      <li class="work-card">
+        <div class="cover" aria-hidden="true"><span class="cover-venue">NeurIPS 2024</span><span class="cover-word">3DGS as MCMC</span></div>
+        <div class="work-body">
+          <h3 class="pub-title">3D Gaussian Splatting as Markov Chain Monte Carlo</h3>
+          <p class="pub-authors">Kheradmand, Rebain, Sharma, Sun, <b>Tseng</b>, Isack, Kar, Tagliasacchi, Yi</p>
+          <ul class="tags"><li>Gaussian Splatting</li><li>MCMC</li><li>CUDA</li></ul>
+          <ul class="pub-links"><li><a class="pill" href="https://ubc-vision.github.io/3dgs-mcmc/">Project page</a></li><li><a class="pill" href="https://arxiv.org/abs/2404.09591">arXiv</a></li></ul>
+        </div>
       </li>
-      <li>
-        <p class="pub-venue">ECCV 2024</p>
-        <h3 class="pub-title">PointNeRF++: A multi-scale, point-based Neural Radiance Field</h3>
-        <p class="pub-authors">Weiwei Sun, Eduard Trulls, <b>Yang-Che Tseng</b>, Sneha Sambandam, Gopal Sharma, Andrea Tagliasacchi, Kwang Moo Yi</p>
-        <ul class="pub-links"><li><a class="pill" href="https://pointnerfpp.github.io/">Project page</a></li><li><a class="pill" href="https://arxiv.org/abs/2312.02362">arXiv</a></li></ul>
+      <li class="work-card">
+        <div class="cover" aria-hidden="true"><span class="cover-venue">ECCV 2024</span><span class="cover-word">PointNeRF++</span></div>
+        <div class="work-body">
+          <h3 class="pub-title">PointNeRF++: A multi-scale, point-based Neural Radiance Field</h3>
+          <p class="pub-authors">Sun, Trulls, <b>Tseng</b>, Sambandam, Sharma, Tagliasacchi, Yi</p>
+          <ul class="tags"><li>NeRF</li><li>Point clouds</li><li>KITTI-360 · ScanNet</li></ul>
+          <ul class="pub-links"><li><a class="pill" href="https://pointnerfpp.github.io/">Project page</a></li><li><a class="pill" href="https://arxiv.org/abs/2312.02362">arXiv</a></li></ul>
+        </div>
       </li>
-      <li>
-        <p class="pub-venue">ICRA 2023</p>
-        <h3 class="pub-title">Orbeez-SLAM: A Real-time Monocular Visual SLAM with ORB Features and NeRF-realized Mapping</h3>
-        <p class="pub-authors">Chi-Ming Chung, <b>Yang-Che Tseng</b>, Ya-Ching Hsu, Xiang-Qian Shi, Yun-Hung Hua, Jia-Fong Yeh, Wen-Chin Chen, Yi-Ting Chen, Winston H. Hsu</p>
-        <ul class="pub-links"><li><a class="pill" href="https://arxiv.org/abs/2209.13274">arXiv</a></li><li><a class="pill" href="https://github.com/MarvinChung/Orbeez-SLAM">Code</a></li></ul>
+      <li class="work-card">
+        <div class="cover" aria-hidden="true"><span class="cover-venue">ICRA 2023</span><span class="cover-word">Orbeez-SLAM</span></div>
+        <div class="work-body">
+          <h3 class="pub-title">Orbeez-SLAM: Real-time monocular visual SLAM with ORB features and NeRF-realized mapping</h3>
+          <p class="pub-authors">Chung, <b>Tseng</b>, Hsu, Shi, Hua, Yeh, Chen, Chen, Hsu</p>
+          <ul class="tags"><li>SLAM</li><li>NeRF</li><li>CUDA · C++</li></ul>
+          <ul class="pub-links"><li><a class="pill" href="https://arxiv.org/abs/2209.13274">arXiv</a></li><li><a class="pill" href="https://github.com/MarvinChung/Orbeez-SLAM">Code</a></li></ul>
+        </div>
       </li>
-    </ol>
+    </ul>
   </div>
 </section>
 
-<section id="experience" class="section tint">
+<section id="about" class="section tint">
+  <div class="inner">
+    <h2 class="reveal">About</h2>
+    <div class="about reveal-group">
+      <div class="prose">
+        <p>I am an M.Sc. student in the Computer Vision Lab at UBC. My work is on neural rendering and SLAM; right now I combine diffusion models with Gaussian Splatting, and study how single-view novel view synthesis should be evaluated.</p>
+        <p>Before research I worked as a software engineer and data scientist at GoGoX, building an LLM retrieval assistant, GPS map matching and driver-behavior models.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Research</dt><dd><ul class="tags"><li>Gaussian Splatting</li><li>NeRF</li><li>SLAM</li><li>Diffusion models</li><li>Novel view synthesis</li></ul></dd></div>
+        <div><dt>Tools</dt><dd><ul class="tags"><li>Python</li><li>PyTorch</li><li>C++</li><li>CUDA</li><li>OpenCV</li><li>Docker</li></ul></dd></div>
+        <div><dt>Education</dt><dd><p><b>M.Sc., Computer Science</b> · The University of British Columbia · 2024–</p><p><b>B.S., Computer Science and Information Engineering</b> · National Taiwan University · 2019–2023</p></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="section">
   <div class="inner">
     <h2 class="reveal">Experience</h2>
     <h3 class="sub reveal">Research</h3>
-    <ol class="timeline" data-steps>
+    <ol class="timeline reveal-group">
       <li><span class="when">2023–2024</span><div><p class="role">Research Assistant · Computer Vision Lab, UBC</p><p class="where">Vancouver, BC</p><ul><li>Studied where 3D Gaussian Splatting breaks on dynamic scenes (DynamicScene, HyperNeRF, DyCheck iPhone).</li><li>Modeled static and dynamic Gaussians separately with optical-flow masks; found the limits under large camera motion.</li><li>Used a video diffusion model as a refiner to offset sparse inputs in dynamic datasets.</li></ul></div></li>
       <li><span class="when">2023</span><div><p class="role">Research Intern · PointNeRF++</p><p class="where">Vancouver, BC</p><ul><li>Ran 3D Gaussian Splatting experiments on KITTI-360, ScanNet and NeRF Synthetic.</li><li>Studied why 3D Gaussian Splatting struggles on real-world scenes.</li></ul></div></li>
       <li><span class="when">2022</span><div><p class="role">Undergraduate Researcher · Communications &amp; Multimedia Lab, NTU</p><p class="where">Taiwan</p><ul><li>Brought instant-ngp NeRF into ORB-SLAM in CUDA and C++ for real-time reconstruction, 800× faster than other NeRF-based SLAM systems.</li><li>Derived the NeRF rendering loss with respect to camera pose and checked it against the instant-ngp source.</li></ul></div></li>
       <li><span class="when">2021–2022</span><div><p class="role">Undergraduate Researcher · Machine &amp; Intelligence Understanding Lab, NTU</p><p class="where">Taiwan</p><ul><li>Improved speech recognition and spoken language understanding through natural-language pretraining.</li><li>Organized more than 20 cross-modal text and speech tasks with their benchmarks and datasets.</li></ul></div></li>
     </ol>
     <h3 class="sub reveal">Industry</h3>
-    <ol class="timeline" data-steps>
+    <ol class="timeline reveal-group">
       <li><span class="when">2022–2024</span><div><p class="role">Software Engineer, Data Scientist · GoGoX</p><p class="where">Vancouver, BC</p><ul><li>QA bot: a RAG pipeline on OpenAI, Pinecone and LangChain, a Streamlit MVP for beta users, and a self-hosted Redis Stack vector store that removed 2 s of retrieval latency.</li><li>Driver stopping model: counterfactual analysis of when drivers stop working, on a Graphhopper routing service extracted from the legacy dispatch system.</li><li>GPS map matching with a hidden Markov model, plus a folium and OpenStreetMap tool for inspecting tracks.</li><li>Automated pickup and arrival-time labeling with a linear model and anomaly filtering.</li></ul></div></li>
       <li><span class="when">2022</span><div><p class="role">Software Engineering Intern · ASUS Intelligence Cloud Service</p><p class="where">Taiwan</p><ul><li>Extended Selenium IDE (Electron, Node.js) with new recording functions, so 19 of 23 test cases could be recorded automatically.</li></ul></div></li>
     </ol>
-  </div>
-</section>
-
-<section id="projects" class="section">
-  <div class="inner">
-    <h2 class="reveal">Side projects</h2>
+    <h3 class="sub reveal">Side projects</h3>
     <ul class="cards reveal-group">
-      <li><h3>nvtop modification</h3><p>Added per-user filtering, in C, to the open-source GPU monitor nvtop.</p><p class="stack">C</p></li>
-      <li><h3>Clapping detection</h3><p>Cleaned four action datasets and trained a PyTorch model to 92% accuracy on Kinetics, then adapted it to videos of children clapping.</p><p class="stack">PyTorch</p></li>
-      <li><h3>Draw-straight-line detector</h3><p>Decides whether a person in a video draws a straight line, using contour detection and filtering.</p><p class="stack">OpenCV · C++</p></li>
-      <li><h3>Open AIFab</h3><p>Served seven PyTorch and TensorFlow vision models as a Flask API for the backend team.</p><p class="stack">Flask · PyTorch · TensorFlow</p></li>
-      <li><h3>Coughvid</h3><p>Combined audio cough-detection models with clinical-data models behind a Flask API for COVID-19 screening.</p><p class="stack">PyTorch · Flask</p></li>
-      <li><h3>Japanese memorizer</h3><p>A vocabulary app with a Firebase backend and CI/CD on Codemagic.</p><p class="stack">Flutter · bloc · Firebase</p></li>
+      <li><h4>nvtop modification</h4><p>Added per-user filtering, in C, to the open-source GPU monitor nvtop.</p><ul class="tags"><li>C</li></ul></li>
+      <li><h4>Clapping detection</h4><p>Cleaned four action datasets and trained a model to 92% accuracy on Kinetics, then adapted it to videos of children clapping.</p><ul class="tags"><li>PyTorch</li></ul></li>
+      <li><h4>Draw-straight-line detector</h4><p>Decides whether a person in a video draws a straight line, using contour detection and filtering.</p><ul class="tags"><li>OpenCV</li><li>C++</li></ul></li>
+      <li><h4>Open AIFab</h4><p>Served seven PyTorch and TensorFlow vision models as a Flask API for the backend team.</p><ul class="tags"><li>Flask</li><li>PyTorch</li><li>TensorFlow</li></ul></li>
+      <li><h4>Coughvid</h4><p>Combined audio cough-detection models with clinical-data models behind a Flask API for COVID-19 screening.</p><ul class="tags"><li>PyTorch</li><li>Flask</li></ul></li>
+      <li><h4>Japanese memorizer</h4><p>A vocabulary app with a Firebase backend and CI/CD on Codemagic.</p><ul class="tags"><li>Flutter</li><li>Firebase</li></ul></li>
     </ul>
   </div>
 </section>
 
-<section id="education" class="section tint">
-  <div class="inner">
-    <h2 class="reveal">Education</h2>
-    <div class="table-wrap reveal">
-      <table>
-        <thead><tr><th>Degree</th><th>School</th><th>Years</th></tr></thead>
-        <tbody>
-          <tr class="ours"><td>M.Sc., Computer Science</td><td>The University of British Columbia</td><td>2024–</td></tr>
-          <tr><td>Research Assistant</td><td>The University of British Columbia</td><td>2023–2024</td></tr>
-          <tr><td>B.S., Computer Science and Information Engineering</td><td>National Taiwan University</td><td>2019–2023</td></tr>
-        </tbody>
-      </table>
-    </div>
+<section id="contact" class="section tint">
+  <div class="inner contact reveal">
+    <h2>Contact</h2>
+    <p class="lede">The fastest way to reach me is email. I am glad to talk about research, collaborations and roles in 3D vision.</p>
+    <p class="contact-mail"><a href="mailto:jeffyct@cs.ubc.ca">jeffyct@cs.ubc.ca</a></p>
+    <ul class="buttons">
+      <li><a class="btn" href="mailto:jeffyct@cs.ubc.ca"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span>Email</span></a></li>
+      <li><a class="btn" href="https://github.com/jeff999955"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5 M16 7l5 5-5 5 M13.5 5l-3 14"/></svg><span>GitHub</span></a></li>
+      <li><a class="btn" href="Jeff_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg><span>Resume</span></a></li>
+    </ul>
+    <p class="caption">Vancouver, BC</p>
   </div>
 </section>
 
-<footer class="footer">Jeff Tseng · <a href="https://github.com/jeff999955">GitHub</a> · <a href="mailto:jeffyct@cs.ubc.ca">jeffyct@cs.ubc.ca</a> · <a href="Jeff_CV.pdf">CV</a></footer>
+<footer class="footer">Jeff Tseng · <a href="https://github.com/jeff999955">GitHub</a> · <a href="mailto:jeffyct@cs.ubc.ca">jeffyct@cs.ubc.ca</a></footer>
 <script src="script.js"></script>
 </body>
 </html>

@@ -1,8 +1,7 @@
 // Jeff Tseng portfolio. Behaviour carried over from the Aligned NVS project page: compare slider, theme switch,
-// collapsing section nav, scroll reveals, TL;DR word light-up and the hero fade. All motion stops under reduced motion.
+// collapsing section nav and fade-in reveals. Scrolling stays native: nothing pins, snaps or hijacks the wheel.
 var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 function clamp(x) { return x < 0 ? 0 : x > 1 ? 1 : x; }
-function ease(x) { return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; }
 
 // Compare slider
 var sliders = [];
@@ -13,22 +12,6 @@ document.querySelectorAll("[data-compare]").forEach(function (el) {
   sliders.push({ input: input, set: set });
 });
 
-// TL;DR: wrap each word so it can light up
-var tldr = document.querySelector("[data-words]"), words = [];
-function wrapWords(el) {
-  Array.prototype.slice.call(el.childNodes).forEach(function (node) {
-    if (node.nodeType === 1 && node.tagName !== "B") { wrapWords(node); return; }
-    if (node.nodeType !== 3) return;
-    var frag = document.createDocumentFragment();
-    node.textContent.split(/(\s+)/).forEach(function (part) {
-      if (!part) return;
-      if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
-      var s = document.createElement("span"); s.className = "w"; s.textContent = part; frag.appendChild(s); words.push(s);
-    });
-    el.replaceChild(frag, node);
-  });
-}
-if (tldr) wrapWords(tldr);
 
 // Reveal on scroll; stagger children of reveal groups
 document.querySelectorAll(".reveal-group").forEach(function (g) {
@@ -101,9 +84,7 @@ nav.addEventListener("keydown", function (e) {
   if (e.key === "Escape" && nav.classList.contains("menu-open")) { setMenu(false); menuBtn.focus(); }
 });
 
-// Scroll-linked effects
-var heroInner = document.querySelector("[data-hero]");
-var rows = Array.prototype.slice.call(document.querySelectorAll("[data-steps] > li"));
+// Scroll: border on the nav once past the hero, current section in the nav, reveals as elements enter the viewport
 var ticking = false;
 function update() {
   ticking = false;
@@ -113,23 +94,9 @@ function update() {
   sections.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < vh * 0.4) current = i; });
   navLinks.forEach(function (a, i) { a.setAttribute("aria-current", i === current); });
   pending = pending.filter(function (el) {
-    if (el.getBoundingClientRect().top > vh * 0.88) return true;
+    if (el.getBoundingClientRect().top > vh * 0.9) return true;
     el.classList.add("in"); return false;
   });
-  if (reduce) return;
-  // Hero fades back as it scrolls away
-  var hp = clamp(y / hero.offsetHeight);
-  heroInner.style.opacity = 1 - ease(hp) * 1.1;
-  heroInner.style.transform = "translateY(" + (-hp * 60) + "px) scale(" + (1 - hp * 0.06) + ")";
-  // About: words light up as the paragraph rises to the middle of the screen
-  if (tldr) {
-    var tr = tldr.getBoundingClientRect(), mid = nav.offsetHeight + (vh - nav.offsetHeight - tr.height) / 2 + vh * 0.04;
-    var tp = clamp((vh * 0.95 - tr.top) / Math.max(1, vh * 0.95 - mid));
-    var lit = Math.round(tp * words.length);
-    words.forEach(function (s, i) { s.classList.toggle("on", i < lit); });
-  }
-  // Timeline rows light in turn
-  rows.forEach(function (li) { li.classList.toggle("on", li.getBoundingClientRect().top < vh * 0.8); });
 }
 function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
 window.addEventListener("scroll", onScroll, { passive: true });
