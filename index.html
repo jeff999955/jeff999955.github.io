@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jeff Tseng</title>
+<meta name="description" content="Jeff (Yang-Che) Tseng, ML infrastructure engineer: LLM infrastructure and agents, GPU clusters, data pipelines, and AI systems shipped into real workflows.">
+<meta property="og:title" content="Jeff Tseng">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body>
+<nav class="localnav" aria-label="Sections">
+  <div class="localnav-inner">
+    <a class="localnav-title" href="#top">Jeff Tseng</a>
+    <ul id="nav-sections">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="localnav-cta" href="Jeff_CV.pdf">Resume</a>
+    <div class="theme-slot">
+      <div class="theme-switch" role="radiogroup" aria-label="Color theme" data-theme-switch>
+        <div class="theme-track">
+          <span class="theme-thumb" aria-hidden="true"></span>
+          <button type="button" role="radio" data-mode="light" aria-checked="false" aria-label="Light" title="Light" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2 M12 20v2 M4.9 4.9l1.4 1.4 M17.7 17.7l1.4 1.4 M2 12h2 M20 12h2 M4.9 19.1l1.4-1.4 M17.7 6.3l1.4-1.4"/></svg></button>
+          <button type="button" role="radio" data-mode="auto" aria-checked="true" aria-label="Auto (match device)" title="Auto (match device)"><svg class="i-monitor" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8 M12 16v4"/></svg><svg class="i-phone" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18h2"/></svg></button>
+          <button type="button" role="radio" data-mode="dark" aria-checked="false" aria-label="Dark" title="Dark" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="currentColor"/></svg></button>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="nav-sections" aria-label="Sections menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="venue intro" style="--d:0">ML infrastructure engineer</p>
+    <h1 class="intro" style="--d:1">Jeff Tseng <span class="alt">(Yang-Che)</span></h1>
+    <p class="lede intro" style="--d:2">I build the infrastructure that puts models to work: LLM apps and agents, data pipelines that run in production, and the GPU fleet behind 110k+ Slurm jobs for my M.Sc. in computer science at UBC.</p>
+    <ul class="buttons intro" style="--d:3">
+      <li><a class="btn" href="https://github.com/jeff999955"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5 M16 7l5 5-5 5 M13.5 5l-3 14"/></svg><span>GitHub</span></a></li>
+      <li><a class="btn" href="https://www.linkedin.com/in/yang-che-tseng-6a9502224"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2.2"/><path d="M5.8 16c.6-1.8 1.8-2.7 3.2-2.7s2.6.9 3.2 2.7 M14.5 9.5h4 M14.5 13h4"/></svg><span>LinkedIn</span></a></li>
+      <li><a class="btn" href="Jeff_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg><span>Resume</span></a></li>
+      <li><a class="btn" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span>Contact</span></a></li>
+    </ul>
+  </div>
+</header>
+
+<section id="about" class="section tint">
+  <div class="inner">
+    <h2 class="reveal">About</h2>
+    <div class="about reveal-group">
+      <div class="prose">
+        <p>I take AI systems from a rough idea to something a team relies on: connecting them to the systems and data that already exist, working with the people who use them, and keeping them running. At GoGoX I built an LLM retrieval assistant and put it in front of beta users, and turned a routing engine buried in a legacy Java system into a service. At MyProGuide I built a serverless AWS pipeline that reads cancellation emails from 12 travel agencies and updates orders; it has run in production for over a year at up to 35k emails a month, and I worked with the operations team to recover 3,200 of 3,600 historical emails.</p>
+        <p>On the LLM side I build retrieval (OpenAI, LangChain, Pinecone, Redis Stack), text-to-SQL agents and agentic tooling. For my M.Sc. at UBC I built a Claude Code setup with safety hooks that submits, monitors and fixes Slurm jobs across three clusters: 110k+ jobs and about 15.8k GPU-hours in all.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Focus</dt><dd><ul class="tags"><li>LLM infrastructure &amp; agents</li><li>ML infrastructure &amp; HPC</li><li>Prototype to production</li><li>Systems integration</li><li>Data pipelines</li><li>3D computer vision</li></ul></dd></div>
+        <div><dt>Tools</dt><dd><ul class="tags"><li>Python</li><li>C/C++</li><li>CUDA</li><li>TypeScript · Node.js</li><li>PyTorch</li><li>Slurm · Apptainer</li><li>AWS</li><li>Google Cloud</li><li>Cloudflare Workers</li><li>GitHub Actions</li></ul></dd></div>
+        <div><dt>Education</dt><dd><p><b>M.Sc., Computer Science</b> · The University of British Columbia · 2024–2026</p><p><b>B.Sc., Computer Science and Information Engineering</b> · National Taiwan University · 2019–2023</p></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <div class="inner">
+    <h2 class="reveal">Experience</h2>
+    <h3 class="sub reveal">Industry</h3>
+    <ol class="timeline reveal-group">
+      <li><span class="when">2024–2025</span><div><p class="role">Software Engineer (part-time) · MyProGuide (TravoAI)</p><p class="where">Remote</p><ul><li><b>Serverless email pipeline:</b> built an AWS SES → Lambda → S3 pipeline that parses cancellation emails from 12 online travel agencies (Klook, KKday, Viator and others) and updates orders through the API. In production for over a year at up to 35k emails a month.</li><li>Wrote multilingual per-agency parsers with a Jest suite built on real emails; recovered 3,200 of 3,600 historical emails with the operations team.</li><li><b>Flutter app:</b> built a tour-guide app from scratch to MVP through spec-first issues and reviewed PRs (BLoC, OAuth, CI).</li><li><b>LLM tooling:</b> prototyped a text-to-SQL agent (LangChain, Gemini) that creates PostgreSQL test accounts.</li></ul></div></li>
+      <li><span class="when">2022–2024</span><div><p class="role">Software Engineer, Data Scientist · GoGoX</p><p class="where">Data Scientist Intern from Sep 2022, full-time from Jun 2023 · Taipei, remote from Vancouver</p><ul><li><b>LLM QA bot:</b> built a RAG chatbot on OpenAI, LangChain and Pinecone, deployed on Google Cloud with a Streamlit MVP for beta users; a self-hosted Redis Stack vector store cut 2 s of latency.</li><li><b>Routing service:</b> extracted the GraphHopper routing engine from a deprecated Java dispatch system into a Docker Compose service with a Python interface, used for counterfactual analysis of driver stop probability.</li><li><b>Labeling automation:</b> an ML model on GPS and order data that labels pickup times automatically, with autoencoder anomaly filtering.</li><li><b>GPS map matching:</b> HMM matching to OpenStreetMap (Python, shapely) to build a travel-time database for ETAs.</li></ul></div></li>
+      <li><span class="when">2022</span><div><p class="role">Software Engineering Intern · ASUS Intelligent Cloud Services</p><p class="where">Taipei</p><ul><li>Extended Selenium IDE with Electron and Node.js, making 19 of 23 previously unrecordable test cases automatable.</li></ul></div></li>
+    </ol>
+    <h3 class="sub reveal">Research engineering</h3>
+    <ol class="timeline reveal-group">
+      <li><span class="when">2023–2026</span><div><p class="role">M.Sc. thesis research, 3D computer vision · UBC</p><p class="where">Research Assistant, Computer Vision Lab, 2023–2024; M.Sc. 2024–2026 · Vancouver</p><ul><li><b>Evaluation protocol:</b> found that single-image novel view synthesis benchmarks score misaligned predictions; proposed a fix (matching → PnP → co-visibility mask) and re-benchmarked 11 baselines on 4 datasets (1.7k test views).</li><li><b>GPU fleet at scale:</b> ran 110k+ Slurm jobs (about 15.8k GPU-hours) on 3 clusters (A5000/3090, V100, H100 MIG), peaking at 127 concurrent GPUs; templated per-scene jobs and packaged baselines as Apptainer images.</li><li><b>Agentic HPC ops:</b> built a Claude Code setup (48 skills, 6 subagents, safety hooks) that submits, monitors and fixes Slurm jobs over SSH; parallel sessions in separate worktrees opened 281 PRs, 227 merged.</li><li><b>Throughput:</b> cut CogNVS evaluation from about 3.5 h to about 21 min per scene by batching across V100s.</li><li><b>Methods:</b> MapAnything-GS (MapAnything SfM initialization → 3D Gaussian Splatting); as an RA, dynamic-scene 3DGS (optical-flow static/dynamic split, video-diffusion refiner) and PointNeRF++ experiments.</li></ul></div></li>
+    </ol>
+  </div>
+</section>
+
+<section id="research" class="section tint">
+  <div class="inner">
+    <h2 class="reveal">Research</h2>
+
+    <article class="featured reveal">
+      <div class="featured-media">
+        <div class="compare" data-compare>
+          <img src="images/aligned-nvs/teaser-scan110-tto-error.jpg" alt="Error map of a Flash3D render aligned with test-time optimization only" width="640" height="512">
+          <div class="after"><img src="images/aligned-nvs/teaser-scan110-ours-error.jpg" alt="Error map of the same Flash3D render aligned with PnP plus test-time optimization" width="640" height="512"></div>
+          <input type="range" min="0" max="100" step="0.5" value="50" aria-label="Compare error maps: TTO only vs. PnP + TTO">
+          <div class="bar"><div class="knob"></div></div>
+        </div>
+        <div class="chips" aria-hidden="true"><span class="chip conv">TTO only</span><span class="chip ours">PnP + TTO</span></div>
+      </div>
+      <div class="featured-body">
+        <p class="pub-venue">WACV 2027 · First author</p>
+        <h3 class="pub-title">Aligning Misaligned Benchmarks for Single-View Novel View Synthesis</h3>
+        <p class="pub-authors"><b>Yang-Che Tseng</b>, Erqun Dong, Jeong-gi Kwak, Gopal Sharma, Shakiba Kheradmand, Stephan Garbin, Hossam Isack, Kwang Moo Yi</p>
+        <p class="pub-blurb">Conventional protocols compare rendered views that do not match the ground truth. We align each reconstruction to the ground-truth frame with image matching and PnP, then evaluate only co-visible pixels. Drag to compare error maps of the same Flash3D render.</p>
+        <ul class="tags"><li>Novel view synthesis</li><li>PnP-RANSAC</li><li>Benchmarking</li></ul>
+        <ul class="pub-links"><li><a class="pill" href="https://arxiv.org/pdf/2610.38349">Paper</a></li><li><a class="pill" href="https://github.com/ubc-vision/aligned-sv-nvs-bench">Code</a></li></ul>
+      </div>
+    </article>
+
+    <ul class="work-grid reveal-group">
+      <li class="work-card">
+        <div class="cover" aria-hidden="true"><span class="cover-venue">NeurIPS 2024</span><span class="cover-word">3DGS as MCMC</span></div>
+        <div class="work-body">
+          <h3 class="pub-title">3D Gaussian Splatting as Markov Chain Monte Carlo</h3>
+          <p class="pub-authors">Kheradmand, Rebain, Sharma, Sun, <b>Tseng</b>, Isack, Kar, Tagliasacchi, Yi</p>
+          <ul class="tags"><li>Gaussian Splatting</li><li>MCMC</li><li>CUDA</li></ul>
+          <ul class="pub-links"><li><a class="pill" href="https://ubc-vision.github.io/3dgs-mcmc/">Project page</a></li><li><a class="pill" href="https://arxiv.org/abs/2404.09591">arXiv</a></li></ul>
+        </div>
+      </li>
+      <li class="work-card">
+        <div class="cover" aria-hidden="true"><span class="cover-venue">ECCV 2024</span><span class="cover-word">PointNeRF++</span></div>
+        <div class="work-body">
+          <h3 class="pub-title">PointNeRF++: A multi-scale, point-based Neural Radiance Field</h3>
+          <p class="pub-authors">Sun, Trulls, <b>Tseng</b>, Sambandam, Sharma, Tagliasacchi, Yi</p>
+          <ul class="tags"><li>NeRF</li><li>Point clouds</li><li>KITTI-360 · ScanNet</li></ul>
+          <ul class="pub-links"><li><a class="pill" href="https://pointnerfpp.github.io/">Project page</a></li><li><a class="pill" href="https://arxiv.org/abs/2312.02362">arXiv</a></li></ul>
+        </div>
+      </li>
+      <li class="work-card">
+        <div class="cover" aria-hidden="true"><span class="cover-venue">ICRA 2023</span><span class="cover-word">Orbeez-SLAM</span></div>
+        <div class="work-body">
+          <h3 class="pub-title">Orbeez-SLAM: Real-time monocular visual SLAM with ORB features and NeRF-realized mapping</h3>
+          <p class="pub-authors">Chung, <b>Tseng</b>, Hsu, Shi, Hua, Yeh, Chen, Chen, Hsu</p>
+          <ul class="tags"><li>SLAM</li><li>NeRF</li><li>CUDA · C++</li></ul>
+          <ul class="pub-links"><li><a class="pill" href="https://arxiv.org/abs/2209.13274">arXiv</a></li><li><a class="pill" href="https://github.com/MarvinChung/Orbeez-SLAM">Code</a></li></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <div class="inner contact reveal">
+    <h2>Contact</h2>
+    <p class="lede">Email is the best way to reach me. I am looking for ML infrastructure, LLM infrastructure and forward deployed engineering roles.</p>
+    <p class="contact-mail"><a href="mailto:jeff@yangchetseng.com">jeff@yangchetseng.com</a></p>
+    <ul class="buttons">
+      <li><a class="btn" href="mailto:jeff@yangchetseng.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span>Email</span></a></li>
+      <li><a class="btn" href="https://github.com/jeff999955"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5 M16 7l5 5-5 5 M13.5 5l-3 14"/></svg><span>GitHub</span></a></li>
+      <li><a class="btn" href="https://www.linkedin.com/in/yang-che-tseng-6a9502224"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2.2"/><path d="M5.8 16c.6-1.8 1.8-2.7 3.2-2.7s2.6.9 3.2 2.7 M14.5 9.5h4 M14.5 13h4"/></svg><span>LinkedIn</span></a></li>
+      <li><a class="btn" href="https://scholar.google.com/citations?user=1iJfq7YAAAAJ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z M6 11v5c2.5 2 9.5 2 12 0v-5 M22 9v5"/></svg><span>Scholar</span></a></li>
+      <li><a class="btn" href="Jeff_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg><span>Resume</span></a></li>
+    </ul>
+    <p class="caption">Taipei, Taiwan</p>
+  </div>
+</section>
+
+<footer class="footer">Jeff Tseng · <a href="https://github.com/jeff999955">GitHub</a> · <a href="https://www.linkedin.com/in/yang-che-tseng-6a9502224">LinkedIn</a> · <a href="mailto:jeff@yangchetseng.com">jeff@yangchetseng.com</a></footer>
+<script src="script.js"></script>
+</body>
+</html>
