@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jeff Tseng</title>
-<meta name="description" content="Jeff (Yang-Che) Tseng, M.Sc. student in computer science at the University of British Columbia, working on neural rendering, Gaussian Splatting and novel view synthesis.">
+<meta name="description" content="Jeff (Yang-Che) Tseng, software engineer with AI expertise: LLM apps, ML pipelines, computer vision and GPU computing.">
 <meta property="og:title" content="Jeff Tseng">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,9 +17,9 @@
   <div class="localnav-inner">
     <a class="localnav-title" href="#top">Jeff Tseng</a>
     <ul id="nav-sections">
-      <li><a href="#work">Work</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#experience">Experience</a></li>
+      <li><a href="#research">Research</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a class="localnav-cta" href="Jeff_CV.pdf">Resume</a>
@@ -39,9 +39,9 @@
 
 <header class="hero" id="top">
   <div class="hero-inner">
-    <p class="venue intro" style="--d:0">Computer vision · UBC</p>
+    <p class="venue intro" style="--d:0">Software engineer · AI</p>
     <h1 class="intro" style="--d:1">Jeff Tseng <span class="alt">(Yang-Che)</span></h1>
-    <p class="lede intro" style="--d:2">M.Sc. student in computer science at the University of British Columbia. I build and evaluate methods that turn images into 3D scenes: Gaussian Splatting, NeRF, SLAM, and benchmarks for novel view synthesis.</p>
+    <p class="lede intro" style="--d:2">Software engineer with AI expertise. I build ML systems end to end, from an LLM retrieval assistant in production to GPU-accelerated 3D vision in C++ and CUDA, alongside an M.Sc. in computer science at UBC.</p>
     <ul class="buttons intro" style="--d:3">
       <li><a class="btn" href="https://github.com/jeff999955"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5 M16 7l5 5-5 5 M13.5 5l-3 14"/></svg><span>GitHub</span></a></li>
       <li><a class="btn" href="Jeff_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg><span>Resume</span></a></li>
@@ -50,9 +50,53 @@
   </div>
 </header>
 
-<section id="work" class="section">
+<section id="about" class="section tint">
   <div class="inner">
-    <h2 class="reveal">Featured work</h2>
+    <h2 class="reveal">About</h2>
+    <div class="about reveal-group">
+      <div class="prose">
+        <p>I am a software engineer who works on AI systems end to end: data pipelines, model training and evaluation, and the services around them. In industry I built an LLM retrieval assistant and geospatial models for a delivery platform; at UBC I wrote GPU code and evaluation pipelines for 3D computer vision.</p>
+        <p>I like problems where the model is only part of the job, and the rest is getting data in, results out, and the whole thing running reliably on real hardware, from a laptop to a Slurm cluster.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Focus</dt><dd><ul class="tags"><li>LLM apps &amp; RAG</li><li>ML pipelines</li><li>Computer vision</li><li>GPU computing</li><li>Data engineering</li></ul></dd></div>
+        <div><dt>Tools</dt><dd><ul class="tags"><li>Python</li><li>C++</li><li>CUDA</li><li>PyTorch</li><li>Node.js</li><li>Flask</li><li>Docker</li><li>Linux · Slurm</li></ul></dd></div>
+        <div><dt>Education</dt><dd><p><b>M.Sc., Computer Science</b> · The University of British Columbia · 2024–</p><p><b>B.S., Computer Science and Information Engineering</b> · National Taiwan University · 2019–2023</p></dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="section">
+  <div class="inner">
+    <h2 class="reveal">Experience</h2>
+    <h3 class="sub reveal">Industry</h3>
+    <ol class="timeline reveal-group">
+      <li><span class="when">2022–2024</span><div><p class="role">Software Engineer, Data Scientist · GoGoX</p><p class="where">Vancouver, BC</p><ul><li>QA bot: a RAG pipeline on OpenAI, Pinecone and LangChain, a Streamlit MVP for beta users, and a self-hosted Redis Stack vector store that removed 2 s of retrieval latency.</li><li>Driver stopping model: counterfactual analysis of when drivers stop working, on a Graphhopper routing service extracted from the legacy dispatch system.</li><li>GPS map matching with a hidden Markov model, plus a folium and OpenStreetMap tool for inspecting tracks.</li><li>Automated pickup and arrival-time labeling with a linear model and anomaly filtering.</li></ul></div></li>
+      <li><span class="when">2022</span><div><p class="role">Software Engineering Intern · ASUS Intelligence Cloud Service</p><p class="where">Taiwan</p><ul><li>Extended Selenium IDE (Electron, Node.js) with new recording functions, so 19 of 23 test cases could be recorded automatically.</li></ul></div></li>
+    </ol>
+    <h3 class="sub reveal">Research engineering</h3>
+    <ol class="timeline reveal-group">
+      <li><span class="when">2023–2024</span><div><p class="role">Research Assistant · Computer Vision Lab, UBC</p><p class="where">Vancouver, BC</p><ul><li>Studied where 3D Gaussian Splatting breaks on dynamic scenes (DynamicScene, HyperNeRF, DyCheck iPhone).</li><li>Modeled static and dynamic Gaussians separately with optical-flow masks; found the limits under large camera motion.</li><li>Used a video diffusion model as a refiner to offset sparse inputs in dynamic datasets.</li></ul></div></li>
+      <li><span class="when">2023</span><div><p class="role">Research Intern · PointNeRF++</p><p class="where">Vancouver, BC</p><ul><li>Ran 3D Gaussian Splatting experiments on KITTI-360, ScanNet and NeRF Synthetic.</li><li>Studied why 3D Gaussian Splatting struggles on real-world scenes.</li></ul></div></li>
+      <li><span class="when">2022</span><div><p class="role">Undergraduate Researcher · Communications &amp; Multimedia Lab, NTU</p><p class="where">Taiwan</p><ul><li>Brought instant-ngp NeRF into ORB-SLAM in CUDA and C++ for real-time reconstruction, 800× faster than other NeRF-based SLAM systems.</li><li>Derived the NeRF rendering loss with respect to camera pose and checked it against the instant-ngp source.</li></ul></div></li>
+      <li><span class="when">2021–2022</span><div><p class="role">Undergraduate Researcher · Machine &amp; Intelligence Understanding Lab, NTU</p><p class="where">Taiwan</p><ul><li>Improved speech recognition and spoken language understanding through natural-language pretraining.</li><li>Organized more than 20 cross-modal text and speech tasks with their benchmarks and datasets.</li></ul></div></li>
+    </ol>
+    <h3 class="sub reveal">Side projects</h3>
+    <ul class="cards reveal-group">
+      <li><h4>nvtop modification</h4><p>Added per-user filtering, in C, to the open-source GPU monitor nvtop.</p><ul class="tags"><li>C</li></ul></li>
+      <li><h4>Clapping detection</h4><p>Cleaned four action datasets and trained a model to 92% accuracy on Kinetics, then adapted it to videos of children clapping.</p><ul class="tags"><li>PyTorch</li></ul></li>
+      <li><h4>Draw-straight-line detector</h4><p>Decides whether a person in a video draws a straight line, using contour detection and filtering.</p><ul class="tags"><li>OpenCV</li><li>C++</li></ul></li>
+      <li><h4>Open AIFab</h4><p>Served seven PyTorch and TensorFlow vision models as a Flask API for the backend team.</p><ul class="tags"><li>Flask</li><li>PyTorch</li><li>TensorFlow</li></ul></li>
+      <li><h4>Coughvid</h4><p>Combined audio cough-detection models with clinical-data models behind a Flask API for COVID-19 screening.</p><ul class="tags"><li>PyTorch</li><li>Flask</li></ul></li>
+      <li><h4>Japanese memorizer</h4><p>A vocabulary app with a Firebase backend and CI/CD on Codemagic.</p><ul class="tags"><li>Flutter</li><li>Firebase</li></ul></li>
+    </ul>
+  </div>
+</section>
+
+<section id="research" class="section tint">
+  <div class="inner">
+    <h2 class="reveal">Research</h2>
 
     <article class="featured reveal">
       <div class="featured-media">
@@ -106,61 +150,17 @@
   </div>
 </section>
 
-<section id="about" class="section tint">
-  <div class="inner">
-    <h2 class="reveal">About</h2>
-    <div class="about reveal-group">
-      <div class="prose">
-        <p>I am an M.Sc. student in the Computer Vision Lab at UBC. My work is on neural rendering and SLAM; right now I combine diffusion models with Gaussian Splatting, and study how single-view novel view synthesis should be evaluated.</p>
-        <p>Before research I worked as a software engineer and data scientist at GoGoX, building an LLM retrieval assistant, GPS map matching and driver-behavior models.</p>
-      </div>
-      <dl class="facts">
-        <div><dt>Research</dt><dd><ul class="tags"><li>Gaussian Splatting</li><li>NeRF</li><li>SLAM</li><li>Diffusion models</li><li>Novel view synthesis</li></ul></dd></div>
-        <div><dt>Tools</dt><dd><ul class="tags"><li>Python</li><li>PyTorch</li><li>C++</li><li>CUDA</li><li>OpenCV</li><li>Docker</li></ul></dd></div>
-        <div><dt>Education</dt><dd><p><b>M.Sc., Computer Science</b> · The University of British Columbia · 2024–</p><p><b>B.S., Computer Science and Information Engineering</b> · National Taiwan University · 2019–2023</p></dd></div>
-      </dl>
-    </div>
-  </div>
-</section>
-
-<section id="experience" class="section">
-  <div class="inner">
-    <h2 class="reveal">Experience</h2>
-    <h3 class="sub reveal">Research</h3>
-    <ol class="timeline reveal-group">
-      <li><span class="when">2023–2024</span><div><p class="role">Research Assistant · Computer Vision Lab, UBC</p><p class="where">Vancouver, BC</p><ul><li>Studied where 3D Gaussian Splatting breaks on dynamic scenes (DynamicScene, HyperNeRF, DyCheck iPhone).</li><li>Modeled static and dynamic Gaussians separately with optical-flow masks; found the limits under large camera motion.</li><li>Used a video diffusion model as a refiner to offset sparse inputs in dynamic datasets.</li></ul></div></li>
-      <li><span class="when">2023</span><div><p class="role">Research Intern · PointNeRF++</p><p class="where">Vancouver, BC</p><ul><li>Ran 3D Gaussian Splatting experiments on KITTI-360, ScanNet and NeRF Synthetic.</li><li>Studied why 3D Gaussian Splatting struggles on real-world scenes.</li></ul></div></li>
-      <li><span class="when">2022</span><div><p class="role">Undergraduate Researcher · Communications &amp; Multimedia Lab, NTU</p><p class="where">Taiwan</p><ul><li>Brought instant-ngp NeRF into ORB-SLAM in CUDA and C++ for real-time reconstruction, 800× faster than other NeRF-based SLAM systems.</li><li>Derived the NeRF rendering loss with respect to camera pose and checked it against the instant-ngp source.</li></ul></div></li>
-      <li><span class="when">2021–2022</span><div><p class="role">Undergraduate Researcher · Machine &amp; Intelligence Understanding Lab, NTU</p><p class="where">Taiwan</p><ul><li>Improved speech recognition and spoken language understanding through natural-language pretraining.</li><li>Organized more than 20 cross-modal text and speech tasks with their benchmarks and datasets.</li></ul></div></li>
-    </ol>
-    <h3 class="sub reveal">Industry</h3>
-    <ol class="timeline reveal-group">
-      <li><span class="when">2022–2024</span><div><p class="role">Software Engineer, Data Scientist · GoGoX</p><p class="where">Vancouver, BC</p><ul><li>QA bot: a RAG pipeline on OpenAI, Pinecone and LangChain, a Streamlit MVP for beta users, and a self-hosted Redis Stack vector store that removed 2 s of retrieval latency.</li><li>Driver stopping model: counterfactual analysis of when drivers stop working, on a Graphhopper routing service extracted from the legacy dispatch system.</li><li>GPS map matching with a hidden Markov model, plus a folium and OpenStreetMap tool for inspecting tracks.</li><li>Automated pickup and arrival-time labeling with a linear model and anomaly filtering.</li></ul></div></li>
-      <li><span class="when">2022</span><div><p class="role">Software Engineering Intern · ASUS Intelligence Cloud Service</p><p class="where">Taiwan</p><ul><li>Extended Selenium IDE (Electron, Node.js) with new recording functions, so 19 of 23 test cases could be recorded automatically.</li></ul></div></li>
-    </ol>
-    <h3 class="sub reveal">Side projects</h3>
-    <ul class="cards reveal-group">
-      <li><h4>nvtop modification</h4><p>Added per-user filtering, in C, to the open-source GPU monitor nvtop.</p><ul class="tags"><li>C</li></ul></li>
-      <li><h4>Clapping detection</h4><p>Cleaned four action datasets and trained a model to 92% accuracy on Kinetics, then adapted it to videos of children clapping.</p><ul class="tags"><li>PyTorch</li></ul></li>
-      <li><h4>Draw-straight-line detector</h4><p>Decides whether a person in a video draws a straight line, using contour detection and filtering.</p><ul class="tags"><li>OpenCV</li><li>C++</li></ul></li>
-      <li><h4>Open AIFab</h4><p>Served seven PyTorch and TensorFlow vision models as a Flask API for the backend team.</p><ul class="tags"><li>Flask</li><li>PyTorch</li><li>TensorFlow</li></ul></li>
-      <li><h4>Coughvid</h4><p>Combined audio cough-detection models with clinical-data models behind a Flask API for COVID-19 screening.</p><ul class="tags"><li>PyTorch</li><li>Flask</li></ul></li>
-      <li><h4>Japanese memorizer</h4><p>A vocabulary app with a Firebase backend and CI/CD on Codemagic.</p><ul class="tags"><li>Flutter</li><li>Firebase</li></ul></li>
-    </ul>
-  </div>
-</section>
-
-<section id="contact" class="section tint">
+<section id="contact" class="section">
   <div class="inner contact reveal">
     <h2>Contact</h2>
-    <p class="lede">The fastest way to reach me is email. I am glad to talk about research, collaborations and roles in 3D vision.</p>
+    <p class="lede">Email is the best way to reach me. I am looking for software engineering roles, especially ones that involve AI.</p>
     <p class="contact-mail"><a href="mailto:jeffyct@cs.ubc.ca">jeffyct@cs.ubc.ca</a></p>
     <ul class="buttons">
       <li><a class="btn" href="mailto:jeffyct@cs.ubc.ca"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span>Email</span></a></li>
       <li><a class="btn" href="https://github.com/jeff999955"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5 M16 7l5 5-5 5 M13.5 5l-3 14"/></svg><span>GitHub</span></a></li>
       <li><a class="btn" href="Jeff_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg><span>Resume</span></a></li>
     </ul>
-    <p class="caption">Vancouver, BC</p>
+    <p class="caption">Taipei, Taiwan</p>
   </div>
 </section>
 
