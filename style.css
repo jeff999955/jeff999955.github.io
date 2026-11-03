@@ -187,15 +187,9 @@ tr.ours td:first-child::before { content:""; display:inline-block; width:8px; he
 .timeline .where { margin:2px 0 8px; font-size:14px; line-height:21px; color:var(--ink-muted); }
 .timeline ul { margin:0; padding-left:18px; font-size:16px; line-height:25px; }
 .timeline ul li + li { margin-top:4px; }
+.timeline ul b { font-weight:600; }
 .timeline ul li::marker { color:var(--teal); }
 
-/* Side projects */
-.cards { display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px; margin:0; padding:0; list-style:none; }
-.cards > li { display:flex; flex-direction:column; padding:20px; border:1px solid var(--line); border-radius:12px; background:var(--surface); transition:background-color .3s var(--ease); }
-.cards > li:hover { background:var(--surface-strong); }
-.cards h4 { margin:0 0 8px; font-size:18px; line-height:26px; font-weight:600; }
-.cards p { margin:0; font-size:15px; line-height:23px; }
-.cards .tags { margin-top:auto; padding-top:14px; }
 
 /* Tech tags */
 .tags { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 0; padding:0; list-style:none; }

@@ -41,9 +41,10 @@
   <div class="hero-inner">
     <p class="venue intro" style="--d:0">Software engineer · AI</p>
     <h1 class="intro" style="--d:1">Jeff Tseng <span class="alt">(Yang-Che)</span></h1>
-    <p class="lede intro" style="--d:2">Software engineer with AI expertise. I build ML systems end to end, from an LLM retrieval assistant in production to GPU-accelerated 3D vision in C++ and CUDA, alongside an M.Sc. in computer science at UBC.</p>
+    <p class="lede intro" style="--d:2">Software engineer with AI expertise. I build ML systems end to end: an LLM retrieval assistant and a serverless email pipeline in production, and GPU experiments at the scale of 110k+ Slurm jobs for my M.Sc. in computer science at UBC.</p>
     <ul class="buttons intro" style="--d:3">
       <li><a class="btn" href="https://github.com/jeff999955"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5 M16 7l5 5-5 5 M13.5 5l-3 14"/></svg><span>GitHub</span></a></li>
+      <li><a class="btn" href="https://www.linkedin.com/in/yang-che-tseng-6a9502224"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2.2"/><path d="M5.8 16c.6-1.8 1.8-2.7 3.2-2.7s2.6.9 3.2 2.7 M14.5 9.5h4 M14.5 13h4"/></svg><span>LinkedIn</span></a></li>
       <li><a class="btn" href="Jeff_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg><span>Resume</span></a></li>
       <li><a class="btn" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span>Contact</span></a></li>
     </ul>
@@ -55,13 +56,13 @@
     <h2 class="reveal">About</h2>
     <div class="about reveal-group">
       <div class="prose">
-        <p>I am a software engineer who works on AI systems end to end: data pipelines, model training and evaluation, and the services around them. In industry I built an LLM retrieval assistant and geospatial models for a delivery platform; at UBC I wrote GPU code and evaluation pipelines for 3D computer vision.</p>
-        <p>I like problems where the model is only part of the job, and the rest is getting data in, results out, and the whole thing running reliably on real hardware, from a laptop to a Slurm cluster.</p>
+        <p>I am a software engineer who works on AI systems end to end: data pipelines, model training and evaluation, and the services around them. At GoGoX I built an LLM retrieval assistant and geospatial models for a delivery platform; at MyProGuide I built a serverless AWS pipeline that has run in production for over a year at up to 35k emails a month.</p>
+        <p>For my M.Sc. at UBC I ran 110k+ Slurm jobs (about 15.8k GPU-hours) across three clusters, and built a Claude Code setup that submits, monitors and fixes those jobs. The model is often only part of the job; the rest is getting data in, results out, and the whole thing running reliably on real hardware.</p>
       </div>
       <dl class="facts">
-        <div><dt>Focus</dt><dd><ul class="tags"><li>LLM apps &amp; RAG</li><li>ML pipelines</li><li>Computer vision</li><li>GPU computing</li><li>Data engineering</li></ul></dd></div>
-        <div><dt>Tools</dt><dd><ul class="tags"><li>Python</li><li>C++</li><li>CUDA</li><li>PyTorch</li><li>Node.js</li><li>Flask</li><li>Docker</li><li>Linux · Slurm</li></ul></dd></div>
-        <div><dt>Education</dt><dd><p><b>M.Sc., Computer Science</b> · The University of British Columbia · 2024–</p><p><b>B.S., Computer Science and Information Engineering</b> · National Taiwan University · 2019–2023</p></dd></div>
+        <div><dt>Focus</dt><dd><ul class="tags"><li>LLM apps &amp; agents</li><li>ML infrastructure &amp; HPC</li><li>Data pipelines</li><li>Computer vision</li><li>GPU computing</li></ul></dd></div>
+        <div><dt>Tools</dt><dd><ul class="tags"><li>Python</li><li>C/C++</li><li>CUDA</li><li>TypeScript · Node.js</li><li>PyTorch</li><li>Slurm · Apptainer</li><li>AWS</li><li>Google Cloud</li><li>Cloudflare Workers</li><li>GitHub Actions</li></ul></dd></div>
+        <div><dt>Education</dt><dd><p><b>M.Sc., Computer Science</b> · The University of British Columbia · 2024–2026</p><p><b>B.Sc., Computer Science and Information Engineering</b> · National Taiwan University · 2019–2023</p></dd></div>
       </dl>
     </div>
   </div>
@@ -72,25 +73,14 @@
     <h2 class="reveal">Experience</h2>
     <h3 class="sub reveal">Industry</h3>
     <ol class="timeline reveal-group">
-      <li><span class="when">2022–2024</span><div><p class="role">Software Engineer, Data Scientist · GoGoX</p><p class="where">Vancouver, BC</p><ul><li>QA bot: a RAG pipeline on OpenAI, Pinecone and LangChain, a Streamlit MVP for beta users, and a self-hosted Redis Stack vector store that removed 2 s of retrieval latency.</li><li>Driver stopping model: counterfactual analysis of when drivers stop working, on a Graphhopper routing service extracted from the legacy dispatch system.</li><li>GPS map matching with a hidden Markov model, plus a folium and OpenStreetMap tool for inspecting tracks.</li><li>Automated pickup and arrival-time labeling with a linear model and anomaly filtering.</li></ul></div></li>
-      <li><span class="when">2022</span><div><p class="role">Software Engineering Intern · ASUS Intelligence Cloud Service</p><p class="where">Taiwan</p><ul><li>Extended Selenium IDE (Electron, Node.js) with new recording functions, so 19 of 23 test cases could be recorded automatically.</li></ul></div></li>
+      <li><span class="when">2024–2025</span><div><p class="role">Software Engineer (part-time) · MyProGuide (TravoAI)</p><p class="where">Remote</p><ul><li><b>Serverless email pipeline:</b> built an AWS SES → Lambda → S3 pipeline that parses cancellation emails from 12 online travel agencies (Klook, KKday, Viator and others) and updates orders through the API. In production for over a year at up to 35k emails a month.</li><li>Wrote multilingual per-agency parsers with a Jest suite built on real emails; recovered 3,200 of 3,600 historical emails with the operations team.</li><li><b>Flutter app:</b> built a tour-guide app from scratch to MVP through spec-first issues and reviewed PRs (BLoC, OAuth, CI).</li><li><b>LLM tooling:</b> prototyped a text-to-SQL agent (LangChain, Gemini) that creates PostgreSQL test accounts.</li></ul></div></li>
+      <li><span class="when">2022–2024</span><div><p class="role">Software Engineer, Data Scientist · GoGoX</p><p class="where">Data Scientist Intern from Sep 2022, full-time from Jun 2023 · Taipei, remote from Vancouver</p><ul><li><b>LLM QA bot:</b> built a RAG chatbot on OpenAI, LangChain and Pinecone, deployed on Google Cloud; a self-hosted Redis Stack vector store cut 2 s of latency.</li><li><b>Routing service:</b> extracted the GraphHopper routing engine from a deprecated Java dispatch system into a Docker Compose service with a Python interface, used for counterfactual analysis of driver stop probability.</li><li><b>Labeling automation:</b> an ML model on GPS and order data that labels pickup times automatically, with autoencoder anomaly filtering.</li><li><b>GPS map matching:</b> HMM matching to OpenStreetMap (Python, shapely) to build a travel-time database for ETAs.</li></ul></div></li>
+      <li><span class="when">2022</span><div><p class="role">Software Engineering Intern · ASUS Intelligent Cloud Services</p><p class="where">Taipei</p><ul><li>Extended Selenium IDE with Electron and Node.js, making 19 of 23 previously unrecordable test cases automatable.</li></ul></div></li>
     </ol>
     <h3 class="sub reveal">Research engineering</h3>
     <ol class="timeline reveal-group">
-      <li><span class="when">2023–2024</span><div><p class="role">Research Assistant · Computer Vision Lab, UBC</p><p class="where">Vancouver, BC</p><ul><li>Studied where 3D Gaussian Splatting breaks on dynamic scenes (DynamicScene, HyperNeRF, DyCheck iPhone).</li><li>Modeled static and dynamic Gaussians separately with optical-flow masks; found the limits under large camera motion.</li><li>Used a video diffusion model as a refiner to offset sparse inputs in dynamic datasets.</li></ul></div></li>
-      <li><span class="when">2023</span><div><p class="role">Research Intern · PointNeRF++</p><p class="where">Vancouver, BC</p><ul><li>Ran 3D Gaussian Splatting experiments on KITTI-360, ScanNet and NeRF Synthetic.</li><li>Studied why 3D Gaussian Splatting struggles on real-world scenes.</li></ul></div></li>
-      <li><span class="when">2022</span><div><p class="role">Undergraduate Researcher · Communications &amp; Multimedia Lab, NTU</p><p class="where">Taiwan</p><ul><li>Brought instant-ngp NeRF into ORB-SLAM in CUDA and C++ for real-time reconstruction, 800× faster than other NeRF-based SLAM systems.</li><li>Derived the NeRF rendering loss with respect to camera pose and checked it against the instant-ngp source.</li></ul></div></li>
-      <li><span class="when">2021–2022</span><div><p class="role">Undergraduate Researcher · Machine &amp; Intelligence Understanding Lab, NTU</p><p class="where">Taiwan</p><ul><li>Improved speech recognition and spoken language understanding through natural-language pretraining.</li><li>Organized more than 20 cross-modal text and speech tasks with their benchmarks and datasets.</li></ul></div></li>
+      <li><span class="when">2023–2026</span><div><p class="role">M.Sc. thesis research, 3D computer vision · UBC</p><p class="where">Research Assistant, Computer Vision Lab, 2023–2024; M.Sc. 2024–2026 · Vancouver</p><ul><li><b>Evaluation protocol:</b> found that single-image novel view synthesis benchmarks score misaligned predictions; proposed a fix (matching → PnP → co-visibility mask) and re-benchmarked 11 baselines on 4 datasets (1.7k test views).</li><li><b>GPU fleet at scale:</b> ran 110k+ Slurm jobs (about 15.8k GPU-hours) on 3 clusters (A5000/3090, V100, H100 MIG), peaking at 127 concurrent GPUs; templated per-scene jobs and packaged baselines as Apptainer images.</li><li><b>Agentic HPC ops:</b> built a Claude Code setup (48 skills, 6 subagents, safety hooks) that submits, monitors and fixes Slurm jobs over SSH; parallel sessions in separate worktrees opened 281 PRs, 227 merged.</li><li><b>Throughput:</b> cut CogNVS evaluation from about 3.5 h to about 21 min per scene by batching across V100s.</li><li><b>Methods:</b> MapAnything-GS (MapAnything SfM initialization → 3D Gaussian Splatting); as an RA, dynamic-scene 3DGS (optical-flow static/dynamic split, video-diffusion refiner) and PointNeRF++ experiments.</li></ul></div></li>
     </ol>
-    <h3 class="sub reveal">Side projects</h3>
-    <ul class="cards reveal-group">
-      <li><h4>nvtop modification</h4><p>Added per-user filtering, in C, to the open-source GPU monitor nvtop.</p><ul class="tags"><li>C</li></ul></li>
-      <li><h4>Clapping detection</h4><p>Cleaned four action datasets and trained a model to 92% accuracy on Kinetics, then adapted it to videos of children clapping.</p><ul class="tags"><li>PyTorch</li></ul></li>
-      <li><h4>Draw-straight-line detector</h4><p>Decides whether a person in a video draws a straight line, using contour detection and filtering.</p><ul class="tags"><li>OpenCV</li><li>C++</li></ul></li>
-      <li><h4>Open AIFab</h4><p>Served seven PyTorch and TensorFlow vision models as a Flask API for the backend team.</p><ul class="tags"><li>Flask</li><li>PyTorch</li><li>TensorFlow</li></ul></li>
-      <li><h4>Coughvid</h4><p>Combined audio cough-detection models with clinical-data models behind a Flask API for COVID-19 screening.</p><ul class="tags"><li>PyTorch</li><li>Flask</li></ul></li>
-      <li><h4>Japanese memorizer</h4><p>A vocabulary app with a Firebase backend and CI/CD on Codemagic.</p><ul class="tags"><li>Flutter</li><li>Firebase</li></ul></li>
-    </ul>
   </div>
 </section>
 
@@ -154,17 +144,19 @@
   <div class="inner contact reveal">
     <h2>Contact</h2>
     <p class="lede">Email is the best way to reach me. I am looking for software engineering roles, especially ones that involve AI.</p>
-    <p class="contact-mail"><a href="mailto:jeffyct@cs.ubc.ca">jeffyct@cs.ubc.ca</a></p>
+    <p class="contact-mail"><a href="mailto:jeff@yangchetseng.com">jeff@yangchetseng.com</a></p>
     <ul class="buttons">
-      <li><a class="btn" href="mailto:jeffyct@cs.ubc.ca"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span>Email</span></a></li>
+      <li><a class="btn" href="mailto:jeff@yangchetseng.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><span>Email</span></a></li>
       <li><a class="btn" href="https://github.com/jeff999955"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5 M16 7l5 5-5 5 M13.5 5l-3 14"/></svg><span>GitHub</span></a></li>
+      <li><a class="btn" href="https://www.linkedin.com/in/yang-che-tseng-6a9502224"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2.2"/><path d="M5.8 16c.6-1.8 1.8-2.7 3.2-2.7s2.6.9 3.2 2.7 M14.5 9.5h4 M14.5 13h4"/></svg><span>LinkedIn</span></a></li>
+      <li><a class="btn" href="https://scholar.google.com/citations?user=1iJfq7YAAAAJ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z M6 11v5c2.5 2 9.5 2 12 0v-5 M22 9v5"/></svg><span>Scholar</span></a></li>
       <li><a class="btn" href="Jeff_CV.pdf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z M14 3v4h4 M9 12h6 M9 16h6"/></svg><span>Resume</span></a></li>
     </ul>
     <p class="caption">Taipei, Taiwan</p>
   </div>
 </section>
 
-<footer class="footer">Jeff Tseng · <a href="https://github.com/jeff999955">GitHub</a> · <a href="mailto:jeffyct@cs.ubc.ca">jeffyct@cs.ubc.ca</a></footer>
+<footer class="footer">Jeff Tseng · <a href="https://github.com/jeff999955">GitHub</a> · <a href="https://www.linkedin.com/in/yang-che-tseng-6a9502224">LinkedIn</a> · <a href="mailto:jeff@yangchetseng.com">jeff@yangchetseng.com</a></footer>
 <script src="script.js"></script>
 </body>
 </html>
