@@ -195,12 +195,17 @@ tr.ours td:first-child::before { content:""; display:inline-block; width:8px; he
 .tags { display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 0; padding:0; list-style:none; }
 .tags li { font-size:12px; line-height:16px; font-weight:600; letter-spacing:0.04em; text-transform:uppercase; padding:3px 8px; border-radius:4px; background:var(--surface-strong); border:1px solid var(--line); color:var(--ink-muted); }
 
-/* Featured work grid: a cover slab in the deck's deep color stands in for a figure */
+/* Featured work grid: a cover slab in the deck's deep color; .has-img covers put a paper figure under a scrim */
 .work-grid { display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:16px; margin:0; padding:0; list-style:none; }
 .work-card { display:flex; flex-direction:column; border:1px solid var(--line); border-radius:12px; background:var(--surface); overflow:hidden; transition:background-color .3s var(--ease); }
 .work-card:hover { background:var(--surface-strong); }
 .cover { position:relative; display:flex; flex-direction:column; justify-content:flex-end; gap:4px; aspect-ratio:16 / 8; padding:16px 18px; background:radial-gradient(90% 120% at 100% 0%, color-mix(in srgb, var(--teal) 38%, transparent), transparent 60%), var(--deep); color:var(--on-deep); }
 .cover::before { content:""; position:absolute; top:16px; left:18px; width:10px; height:10px; border-radius:999px; background:var(--teal); }
+.cover.has-img { background:var(--deep); }
+.cover.has-img > img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.cover.has-img::after { content:""; position:absolute; inset:0; background:linear-gradient(to top, color-mix(in srgb, var(--deep) 88%, transparent) 0%, color-mix(in srgb, var(--deep) 35%, transparent) 55%, transparent 80%); }
+.cover.has-img::before { z-index:1; }
+.cover.has-img > span { position:relative; z-index:1; }
 .cover-venue { font-size:12px; line-height:16px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; opacity:0.85; }
 .cover-word { font-family:var(--font-serif); font-size:26px; line-height:1.15; }
 .work-body { display:flex; flex-direction:column; flex:1; padding:18px; }
@@ -226,7 +231,7 @@ tr.ours td:first-child::before { content:""; display:inline-block; width:8px; he
 .contact .buttons { margin-top:24px; }
 .contact .caption { margin-top:16px; }
 
-@media (max-width:860px) { .work-grid { grid-template-columns:minmax(0,1fr); } .cover { aspect-ratio:auto; min-height:120px; } .about { grid-template-columns:minmax(0,1fr); } }
+@media (max-width:860px) { .work-grid { grid-template-columns:minmax(0,1fr); } .cover { aspect-ratio:auto; min-height:120px; } .cover.has-img { aspect-ratio:16 / 8; } .about { grid-template-columns:minmax(0,1fr); } }
 @media (max-width:720px) {
   .featured { grid-template-columns:minmax(0,1fr); }
   .timeline > li { grid-template-columns:minmax(0,1fr); gap:2px; }
