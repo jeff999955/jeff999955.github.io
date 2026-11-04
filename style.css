@@ -87,6 +87,7 @@ img { max-width:100%; }
 .hero { position:relative; padding-block:clamp(64px, 12svh, 120px) clamp(48px, 9svh, 88px); text-align:center; overflow:hidden;
   background:radial-gradient(70% 55% at 50% 0%, color-mix(in srgb, var(--teal) 16%, transparent), transparent 70%), var(--page); }
 .hero-inner { max-width:calc(var(--content-width) + 32px); margin:0 auto; }
+.hero .avatar { display:block; width:128px; height:128px; margin:0 auto 24px; border-radius:999px; object-fit:cover; border:3px solid var(--surface); box-shadow:0 0 0 2px var(--teal), 0 10px 30px color-mix(in srgb, var(--deep) 18%, transparent); }
 .hero h1 { font-family:var(--font-serif); font-size:clamp(38px, 6.2vw, 72px); line-height:1.06; font-weight:400; letter-spacing:-0.02em; margin:0 0 32px; text-wrap:balance; }
 .venue { font-size:14px; line-height:21px; letter-spacing:0.08em; text-transform:uppercase; font-weight:600; color:var(--link); margin:0 0 20px; }
 .authors, .affils { display:flex; flex-wrap:wrap; justify-content:center; column-gap:18px; margin:0; }
@@ -103,7 +104,7 @@ img { max-width:100%; }
 .btn[aria-disabled="true"] { opacity:0.5; cursor:default; }
 .btn[aria-disabled="true"]:hover { background:var(--button); }
 .btn[aria-disabled="true"]:active { transform:none; }
-@media (max-width:640px) { .hero { padding-top:48px; } .authors { font-size:17px; line-height:27px; } }
+@media (max-width:640px) { .hero { padding-top:48px; } .hero .avatar { width:104px; height:104px; margin-bottom:20px; } .authors { font-size:17px; line-height:27px; } }
 
 /* Intro: staggered fade-up with a light blur on load */
 .js .intro { opacity:0; transform:translateY(28px); filter:blur(8px); animation:intro 1.2s var(--ease-out) forwards; animation-delay:calc(var(--d, 0) * 110ms + 150ms); }
