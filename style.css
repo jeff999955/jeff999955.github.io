@@ -242,12 +242,6 @@ tr.ours td:first-child::before { content:""; display:inline-block; width:8px; he
 }
 
 
-/* Selected work: proof-point cards. The two with write-ups sit in a wider row above the rest. */
-.work-grid.two { grid-template-columns:repeat(2, minmax(0,1fr)); margin-bottom:16px; }
-.work-card .who { margin:0 0 6px; font-family:var(--font-serif); font-size:19px; line-height:1.35; }
-.work-card .metric { margin:0; font-size:15px; line-height:23px; color:var(--ink-muted); }
-.cover .badge { position:absolute; top:12px; right:14px; z-index:1; font-size:11px; line-height:16px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid color-mix(in srgb, var(--on-deep) 45%, transparent); color:var(--on-deep); }
-
 /* Write-up pages */
 .page-head { padding-block:clamp(40px, 8svh, 80px) clamp(24px, 5svh, 48px);
   background:radial-gradient(70% 55% at 50% 0%, color-mix(in srgb, var(--teal) 16%, transparent), transparent 70%), var(--page); }
@@ -283,7 +277,6 @@ tr.ours td:first-child::before { content:""; display:inline-block; width:8px; he
 .flow > li.human .step b { color:var(--link); }
 .flow > li.loop .step span::after { content:" ↺"; color:var(--teal); font-weight:600; }
 
-@media (max-width:860px) { .work-grid.two { grid-template-columns:minmax(0,1fr); } }
 @media (max-width:640px) { .stats { grid-template-columns:repeat(2, minmax(0,1fr)); } .stats b { font-size:24px; } }
 
 /* Reduced motion: nothing moves or fades; everything is shown in place */
