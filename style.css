@@ -241,6 +241,51 @@ tr.ours td:first-child::before { content:""; display:inline-block; width:8px; he
   .lede { font-size:17px; line-height:27px; }
 }
 
+
+/* Selected work: proof-point cards. The two with write-ups sit in a wider row above the rest. */
+.work-grid.two { grid-template-columns:repeat(2, minmax(0,1fr)); margin-bottom:16px; }
+.work-card .who { margin:0 0 6px; font-family:var(--font-serif); font-size:19px; line-height:1.35; }
+.work-card .metric { margin:0; font-size:15px; line-height:23px; color:var(--ink-muted); }
+.cover .badge { position:absolute; top:12px; right:14px; z-index:1; font-size:11px; line-height:16px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid color-mix(in srgb, var(--on-deep) 45%, transparent); color:var(--on-deep); }
+
+/* Write-up pages */
+.page-head { padding-block:clamp(40px, 8svh, 80px) clamp(24px, 5svh, 48px);
+  background:radial-gradient(70% 55% at 50% 0%, color-mix(in srgb, var(--teal) 16%, transparent), transparent 70%), var(--page); }
+.page-head .inner, .doc { max-width:calc(var(--text-width) + 32px); margin:0 auto; padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }
+.back { display:inline-block; margin-bottom:20px; font-size:14px; line-height:20px; }
+.kicker { margin:0 0 10px; font-size:13px; line-height:18px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--link); }
+.page-head h1 { margin:0; font-family:var(--font-serif); font-size:clamp(32px, 4.4vw, 48px); line-height:1.12; font-weight:400; letter-spacing:-0.015em; text-wrap:balance; }
+.page-head .lede { margin:18px 0 0; max-width:none; }
+.stats { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; margin:28px 0 0; padding:0; list-style:none; }
+.stats li { padding:14px 16px; border:1px solid var(--line); border-radius:12px; background:var(--surface); }
+.stats b { display:block; font-family:var(--font-serif); font-size:28px; line-height:1.1; font-weight:400; color:var(--ink); font-variant-numeric:tabular-nums; }
+.stats span { display:block; margin-top:4px; font-size:14px; line-height:20px; color:var(--ink-muted); }
+.doc { padding-block:8px clamp(56px, 10svh, 96px); }
+.doc h2 { margin:clamp(32px, 6svh, 56px) 0 12px; font-family:var(--font-serif); font-size:clamp(24px, 3vw, 30px); line-height:1.2; font-weight:400; text-align:left; }
+.doc p { margin:0 0 14px; }
+.doc ul.list { margin:0 0 14px; padding-left:20px; }
+.doc ul.list li + li { margin-top:6px; }
+.doc ul.list li::marker { color:var(--teal); }
+.doc .note { margin:20px 0 0; padding:14px 16px; border-left:3px solid var(--teal); background:var(--surface); border-radius:0 8px 8px 0; font-size:15px; line-height:24px; color:var(--ink-muted); }
+
+/* Flow diagram: numbered steps with arrows between them; wraps into a column on phones */
+.flow { counter-reset:step; display:flex; flex-direction:column; gap:0; margin:16px 0 8px; padding:0; list-style:none; }
+.flow > li { position:relative; display:grid; grid-template-columns:34px minmax(0,1fr); gap:14px; padding:0 0 22px; }
+.flow > li::before { counter-increment:step; content:counter(step); display:flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:999px; background:var(--button); color:var(--on-button); font-size:14px; font-weight:600; position:relative; z-index:1; }
+.flow > li::after { content:""; position:absolute; left:16px; top:34px; bottom:0; width:2px; background:var(--line); }
+.flow > li:last-child { padding-bottom:0; }
+.flow > li:last-child::after { display:none; }
+.flow .step { padding:5px 0 0; }
+.flow .step b { display:block; font-weight:600; }
+.flow .step span { display:block; font-size:15px; line-height:23px; color:var(--ink-muted); }
+.flow .step .side { display:block; width:fit-content; margin-top:6px; font-size:13px; line-height:18px; padding:2px 8px; border-radius:4px; border:1px solid var(--line); background:var(--surface); color:var(--misaligned); }
+.flow > li.human::before { counter-increment:none; content:"You"; font-size:11px; background:var(--surface-strong); color:var(--link); box-shadow:inset 0 0 0 2px var(--teal); }
+.flow > li.human .step b { color:var(--link); }
+.flow > li.loop .step span::after { content:" ↺"; color:var(--teal); font-weight:600; }
+
+@media (max-width:860px) { .work-grid.two { grid-template-columns:minmax(0,1fr); } }
+@media (max-width:640px) { .stats { grid-template-columns:repeat(2, minmax(0,1fr)); } .stats b { font-size:24px; } }
+
 /* Reduced motion: nothing moves or fades; everything is shown in place */
 @media (prefers-reduced-motion: reduce) {
   .js .intro, .js .reveal, .js .reveal-group > * { opacity:1; transform:none; filter:none; animation:none; transition:none; }

@@ -60,15 +60,16 @@ if (themeSwitch) {
   });
 }
 
-// Local nav: border once stuck, current section highlighted
+// Local nav: border once stuck, current section highlighted (home page only; subpages have no section links)
 var nav = document.querySelector(".localnav"), hero = document.querySelector(".hero");
-var navLinks = Array.prototype.slice.call(document.querySelectorAll(".localnav ul a"));
+var navLinks = Array.prototype.slice.call(document.querySelectorAll('.localnav ul a[href^="#"]'));
 var sections = navLinks.map(function (a) { return document.querySelector(a.getAttribute("href")); });
 
 // Sections menu: fold the links into the three-line button whenever they do not fit on one row.
 var navInner = nav.querySelector(".localnav-inner"), menuBtn = nav.querySelector(".menu-toggle"), menuList = nav.querySelector("ul");
-function setMenu(open) { nav.classList.toggle("menu-open", open); menuBtn.setAttribute("aria-expanded", open); }
+function setMenu(open) { if (!menuBtn) return; nav.classList.toggle("menu-open", open); menuBtn.setAttribute("aria-expanded", open); }
 function fitNav() {
+  if (!menuBtn) return;
   nav.classList.remove("collapsed");
   var collapse = navInner.scrollWidth > navInner.clientWidth;
   nav.classList.toggle("collapsed", collapse);
@@ -77,19 +78,21 @@ function fitNav() {
 fitNav();
 window.addEventListener("resize", fitNav);
 if (document.fonts) document.fonts.ready.then(fitNav);
-menuBtn.addEventListener("click", function () { setMenu(!nav.classList.contains("menu-open")); });
-menuList.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
-document.addEventListener("pointerdown", function (e) { if (!nav.contains(e.target)) setMenu(false); });
-nav.addEventListener("keydown", function (e) {
-  if (e.key === "Escape" && nav.classList.contains("menu-open")) { setMenu(false); menuBtn.focus(); }
-});
+if (menuBtn) {
+  menuBtn.addEventListener("click", function () { setMenu(!nav.classList.contains("menu-open")); });
+  menuList.addEventListener("click", function (e) { if (e.target.closest("a")) setMenu(false); });
+  document.addEventListener("pointerdown", function (e) { if (!nav.contains(e.target)) setMenu(false); });
+  nav.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && nav.classList.contains("menu-open")) { setMenu(false); menuBtn.focus(); }
+  });
+}
 
 // Scroll: border on the nav once past the hero, current section in the nav, reveals as elements enter the viewport
 var ticking = false;
 function update() {
   ticking = false;
   var vh = window.innerHeight, y = window.scrollY;
-  nav.classList.toggle("stuck", y > hero.offsetHeight - 60);
+  nav.classList.toggle("stuck", y > (hero ? hero.offsetHeight : 0) - 60);
   var current = -1;
   sections.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < vh * 0.4) current = i; });
   navLinks.forEach(function (a, i) { a.setAttribute("aria-current", i === current); });

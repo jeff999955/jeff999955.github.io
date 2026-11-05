@@ -18,6 +18,7 @@
     <a class="localnav-title" href="#top">Yang-Che Tseng</a>
     <ul id="nav-sections">
       <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -71,7 +72,59 @@
   </div>
 </section>
 
-<section id="experience" class="section">
+<section id="work" class="section">
+  <div class="inner">
+    <h2 class="reveal">Selected work</h2>
+    <ul class="work-grid two reveal-group">
+      <li class="work-card">
+        <div class="cover"><span class="cover-venue">TravoAI · MyProGuide</span><span class="cover-word">Cancellation email pipeline</span></div>
+        <div class="work-body">
+          <p class="who">Ops stopped processing booking cancellations by hand.</p>
+          <p class="metric">In production for over a year at up to 35k emails a month, with parsers for 12 online travel agencies across 4 countries.</p>
+          <ul class="tags"><li>AWS Lambda</li><li>SES</li><li>S3</li><li>Node.js</li></ul>
+          <ul class="pub-links"><li><a class="pill" href="projects/email-pipeline.html">How it works</a></li></ul>
+        </div>
+      </li>
+      <li class="work-card">
+        <div class="cover"><span class="cover-venue">UBC · M.Sc.</span><span class="cover-word">Agentic HPC harness</span></div>
+        <div class="work-body">
+          <p class="who">Researchers stopped babysitting GPU experiments.</p>
+          <p class="metric">Claude Code agents take an experiment from code change to pull request. Parallel sessions opened 281 PRs; 227 were merged after review.</p>
+          <ul class="tags"><li>Claude Code</li><li>Slurm</li><li>Git worktrees</li></ul>
+          <ul class="pub-links"><li><a class="pill" href="projects/agent-harness.html">How it works</a></li></ul>
+        </div>
+      </li>
+    </ul>
+    <ul class="work-grid reveal-group">
+      <li class="work-card">
+        <div class="cover"><span class="cover-venue">UBC · M.Sc.</span><span class="cover-word">GPU fleet</span></div>
+        <div class="work-body">
+          <p class="who">Re-benchmarked 11 published methods at scale.</p>
+          <p class="metric">110k+ Slurm jobs, about 15.8k GPU-hours across 3 compute providers, peaking at 127 GPUs at once.</p>
+          <ul class="tags"><li>Slurm</li><li>Apptainer</li><li>HPC</li></ul>
+        </div>
+      </li>
+      <li class="work-card">
+        <div class="cover"><span class="cover-venue">ASUS · Intern</span><span class="cover-word">QA test automation</span></div>
+        <div class="work-body">
+          <p class="who">QA could automate 19 of 23 test cases they ran by hand.</p>
+          <p class="metric">Extended Selenium IDE so it could record cases it couldn't before.</p>
+          <ul class="tags"><li>Electron</li><li>Node.js</li><li>Selenium</li></ul>
+        </div>
+      </li>
+      <li class="work-card">
+        <div class="cover"><span class="badge">Prototype</span><span class="cover-venue">GoGoX</span><span class="cover-word">Support bot</span></div>
+        <div class="work-body">
+          <p class="who">RAG chatbot for routine customer-service questions.</p>
+          <p class="metric">Built on OpenAI, LangChain and Pinecone on Google Cloud; cut response latency by 2 s with Redis Stack.</p>
+          <ul class="tags"><li>RAG</li><li>LangChain</li><li>Redis</li></ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="experience" class="section tint">
   <div class="inner">
     <h2 class="reveal">Experience</h2>
     <h3 class="sub reveal">Industry</h3>
@@ -87,7 +140,7 @@
   </div>
 </section>
 
-<section id="research" class="section tint">
+<section id="research" class="section">
   <div class="inner">
     <h2 class="reveal">Research</h2>
 
@@ -143,7 +196,7 @@
   </div>
 </section>
 
-<section id="contact" class="section">
+<section id="contact" class="section tint">
   <div class="inner contact reveal">
     <h2>Contact</h2>
     <p class="lede">Email is the best way to reach me. I'm open to building applications involving computer vision or LLMs, preferably on the backend and infrastructure side.</p>

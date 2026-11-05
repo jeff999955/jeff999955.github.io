@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cancellation Email Pipeline · Yang-Che Tseng</title>
+<meta name="description" content="A serverless AWS pipeline that reads booking-cancellation emails from 12 online travel agencies and updates orders, so the Ops team stopped processing them by hand.">
+<meta property="og:title" content="Cancellation email pipeline · Yang-Che Tseng">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../style.css">
+<script>document.documentElement.classList.add("js");try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body>
+<nav class="localnav" aria-label="Site">
+  <div class="localnav-inner">
+    <a class="localnav-title" href="../">Yang-Che Tseng</a>
+    <a class="localnav-cta" href="../Jeff_CV.pdf">Resume</a>
+    <div class="theme-slot">
+      <div class="theme-switch" role="radiogroup" aria-label="Color theme" data-theme-switch>
+        <div class="theme-track">
+          <span class="theme-thumb" aria-hidden="true"></span>
+          <button type="button" role="radio" data-mode="light" aria-checked="false" aria-label="Light" title="Light" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 2v2 M12 20v2 M4.9 4.9l1.4 1.4 M17.7 17.7l1.4 1.4 M2 12h2 M20 12h2 M4.9 19.1l1.4-1.4 M17.7 6.3l1.4-1.4"/></svg></button>
+          <button type="button" role="radio" data-mode="auto" aria-checked="true" aria-label="Auto (match device)" title="Auto (match device)"><svg class="i-monitor" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8 M12 16v4"/></svg><svg class="i-phone" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M11 18h2"/></svg></button>
+          <button type="button" role="radio" data-mode="dark" aria-checked="false" aria-label="Dark" title="Dark" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z" fill="currentColor"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<header class="page-head">
+  <div class="inner">
+    <a class="back" href="../#work">← Selected work</a>
+    <p class="kicker">TravoAI · MyProGuide · 2024</p>
+    <h1>A serverless pipeline that handles booking cancellations</h1>
+    <p class="lede">At TravoAI I helped MyProGuide stop processing cancellations by hand. Online travel agencies email a notice whenever a customer cancels; this pipeline reads those emails, works out which booking they're about, and updates the order, so the Ops team no longer does it one email at a time.</p>
+    <ul class="stats">
+      <li><b>35k</b><span>emails a month at peak</span></li>
+      <li><b>1+ year</b><span>in production</span></li>
+      <li><b>12</b><span>travel agencies parsed</span></li>
+      <li><b>4</b><span>countries</span></li>
+    </ul>
+  </div>
+</header>
+
+<main class="doc">
+  <h2>The problem</h2>
+  <p>MyProGuide sells tours through many online travel agencies (OTAs) at once: Klook, KKday, Viator, GetYourGuide, Trip.com, Bokun, Rezio and others, across Taiwan, Thailand, Vietnam and Cambodia. When a customer cancels on one of them, the OTA sends an email. Someone on the Ops team had to open each one, find the booking and cancel it by hand. Every OTA formats its emails differently, often in several templates and languages.</p>
+
+  <h2>How it works</h2>
+  <ol class="flow">
+    <li><div class="step"><b>Each team gets its own inbox address</b><span>A random per-team address on the system domain. Ops sets up forwarding from each OTA account to it, so the address itself says which team the mail belongs to.</span></div></li>
+    <li><div class="step"><b>AWS SES receives the email</b><span>A receipt rule hands every message to the pipeline.</span></div></li>
+    <li><div class="step"><b>Filter Lambda checks the recipient (synchronous)</b><span>It validates the address against the team API. This step runs synchronously because it decides whether anything else should run.</span><span class="side">Unknown recipient: dropped silently, no bounce</span></div></li>
+    <li><div class="step"><b>The raw email is stored in S3</b><span>Every accepted message is kept for audits and re-processing.</span></div></li>
+    <li><div class="step"><b>Parse Lambda reads it (asynchronous)</b><span>It identifies the OTA from the sender and display name, checks whether it's a cancellation, and pulls the booking number out of the HTML or quoted-printable body.</span><span class="side">Parse failure: alert email over SES</span></div></li>
+    <li><div class="step"><b>The order is marked as cancelling</b><span>Through the platform's order API, with no one opening the email.</span></div></li>
+  </ol>
+
+  <h2>Design decisions</h2>
+  <ul class="list">
+    <li><b>Per-team addresses instead of one shared inbox.</b> Routing and source checks come for free: mail to an address that doesn't belong to a team never gets parsed.</li>
+    <li><b>Drop invalid mail silently.</b> Mail to an unknown address is discarded; we chose not to bounce it.</li>
+    <li><b>Store before parsing.</b> Every raw email stays in S3, so there's always an original to check when a parse goes wrong.</li>
+    <li><b>One parser per OTA, several templates each.</b> Detection by sender and display name (some OTAs send from generic addresses), HTML parsing with cheerio, and multi-language handling for the four markets.</li>
+    <li><b>Make failures visible.</b> Parse failures send an alert email; a Python tool exports the emails in a time range to CSV when something needs investigating.</li>
+  </ul>
+
+  <h2>Results</h2>
+  <p>The pipeline has run in production for over a year, handling up to 35k emails a month. To build realistic test data, I worked with Ops to get the OTAs to forward old mail and recovered about 3,200 of roughly 3,600 historical cancellation emails.</p>
+
+  <h2>Stack</h2>
+  <ul class="tags"><li>AWS SES</li><li>AWS Lambda</li><li>Amazon S3</li><li>Node.js</li><li>cheerio</li><li>Python</li><li>CI and deploy scripts</li></ul>
+
+  <p class="note">The repositories are private, so there's no code link. This page covers the part I built: the inbox scheme, the filter Lambda and the cancellation parsers. Another engineer later extended the parse step with more email types.</p>
+</main>
+
+<footer class="footer">Yang-Che Tseng (Jeff) · <a href="../">Home</a> · <a href="https://github.com/jeff999955">GitHub</a> · <a href="https://www.linkedin.com/in/yang-che-tseng-6a9502224">LinkedIn</a> · jeff [at] yangchetseng.com</footer>
+<script src="../script.js"></script>
+</body>
+</html>
